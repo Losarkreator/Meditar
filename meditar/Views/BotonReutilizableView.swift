@@ -7,7 +7,7 @@ import SwiftUI
 struct BotonReutilizableView: View {
     var action: () -> Void
     var texto = "Ejemplo de botón"
-    private let colorFondo = Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1))
+    private let colorFondo = Color(#colorLiteral(red: 0.9764705896, green: 0.850980401, blue: 0.5490196347, alpha: 1))
     private let colorNivel = Color(#colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1))
     
     var body: some View {

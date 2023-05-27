@@ -6,32 +6,38 @@
 import SwiftUI
 
 struct NivelesView: View {
-    private let colorFondo = Color(#colorLiteral(red: 0.7965434194, green: 0.8816905618, blue: 0.9133130908, alpha: 1))
+    private let colorFondo = Color(#colorLiteral(red: 0.6078431373, green: 0.3176470588, blue: 0.8784313725, alpha: 1))
     
     var body: some View {
         
-        VStack(alignment: .leading) {
-            BotonReutilizableView(
-                action: {
-                    print("Botón reutilizable clicado")
-                }, texto: "Principiante: 5''")
+        ZStack {
+            Rectangle()
+                .fill(colorFondo)
+                .ignoresSafeArea()
             
-            BotonReutilizableView(
-                action: {
-                    print("Botón reutilizable clicado")
-                }, texto: "Intermedio: 15''")
-            BotonReutilizableView(
-                action: {
-                    print("Botón reutilizable clicado")
-                }, texto: "Experto: 30''")
-            BotonReutilizableView(
-                action: {
-                    print("Botón reutilizable clicado")
-                }, texto: "Novicio: 1h")
+            VStack(alignment: .leading) {
+                BotonReutilizableView(
+                    action: {
+                        print("Botón reutilizable clicado")
+                    }, texto: "Principiante: 5''")
+                
+                BotonReutilizableView(
+                    action: {
+                        print("Botón reutilizable clicado")
+                    }, texto: "Intermedio: 15''")
+                BotonReutilizableView(
+                    action: {
+                        print("Botón reutilizable clicado")
+                    }, texto: "Experto: 30''")
+                BotonReutilizableView(
+                    action: {
+                        print("Botón reutilizable clicado")
+                    }, texto: "Novicio: 1h")
+            }
         }
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .ignoresSafeArea()
-        .background(colorFondo)
+//        .frame(maxWidth: .infinity, maxHeight: .infinity)
+//        .ignoresSafeArea()
+//        .background(colorFondo)
         
     }
 }

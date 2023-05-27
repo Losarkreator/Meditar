@@ -11,6 +11,8 @@
 		87229D162A21FA8C00BE334B /* CountdownViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87229D152A21FA8C00BE334B /* CountdownViewModel.swift */; };
 		87229D182A22022F00BE334B /* NivelesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87229D172A22022F00BE334B /* NivelesView.swift */; };
 		87229D1A2A2202A500BE334B /* BotonReutilizableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87229D192A2202A500BE334B /* BotonReutilizableView.swift */; };
+		8781DEA42A2249DE00BA8142 /* ListaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8781DEA32A2249DE00BA8142 /* ListaView.swift */; };
+		8781DEA72A22566700BA8142 /* Colores.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8781DEA62A22566700BA8142 /* Colores.swift */; };
 		879009F62A21E57400E70B8D /* meditarApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 879009F52A21E57400E70B8D /* meditarApp.swift */; };
 		879009F82A21E57400E70B8D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 879009F72A21E57400E70B8D /* ContentView.swift */; };
 		879009FA2A21E57500E70B8D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 879009F92A21E57500E70B8D /* Assets.xcassets */; };
@@ -22,6 +24,8 @@
 		87229D152A21FA8C00BE334B /* CountdownViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownViewModel.swift; sourceTree = "<group>"; };
 		87229D172A22022F00BE334B /* NivelesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NivelesView.swift; sourceTree = "<group>"; };
 		87229D192A2202A500BE334B /* BotonReutilizableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BotonReutilizableView.swift; sourceTree = "<group>"; };
+		8781DEA32A2249DE00BA8142 /* ListaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListaView.swift; sourceTree = "<group>"; };
+		8781DEA62A22566700BA8142 /* Colores.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colores.swift; sourceTree = "<group>"; };
 		879009F22A21E57400E70B8D /* meditar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = meditar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		879009F52A21E57400E70B8D /* meditarApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = meditarApp.swift; sourceTree = "<group>"; };
 		879009F72A21E57400E70B8D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -47,6 +51,7 @@
 				87229D112A21F76E00BE334B /* CountdownView.swift */,
 				87229D172A22022F00BE334B /* NivelesView.swift */,
 				87229D192A2202A500BE334B /* BotonReutilizableView.swift */,
+				8781DEA32A2249DE00BA8142 /* ListaView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -64,6 +69,14 @@
 				87229D152A21FA8C00BE334B /* CountdownViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		8781DEA52A22565400BA8142 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				8781DEA62A22566700BA8142 /* Colores.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		879009E92A21E57400E70B8D = {
@@ -85,6 +98,7 @@
 		879009F42A21E57400E70B8D /* meditar */ = {
 			isa = PBXGroup;
 			children = (
+				8781DEA52A22565400BA8142 /* Utils */,
 				879009F52A21E57400E70B8D /* meditarApp.swift */,
 				87229D132A21F79100BE334B /* Model */,
 				87229D142A21F79600BE334B /* ViewModel */,
@@ -174,11 +188,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				87229D162A21FA8C00BE334B /* CountdownViewModel.swift in Sources */,
+				8781DEA42A2249DE00BA8142 /* ListaView.swift in Sources */,
 				87229D1A2A2202A500BE334B /* BotonReutilizableView.swift in Sources */,
 				87229D122A21F76E00BE334B /* CountdownView.swift in Sources */,
 				879009F82A21E57400E70B8D /* ContentView.swift in Sources */,
 				87229D182A22022F00BE334B /* NivelesView.swift in Sources */,
 				879009F62A21E57400E70B8D /* meditarApp.swift in Sources */,
+				8781DEA72A22566700BA8142 /* Colores.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

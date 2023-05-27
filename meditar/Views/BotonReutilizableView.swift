@@ -6,7 +6,7 @@ import SwiftUI
 
 struct BotonReutilizableView: View {
     var action: () -> Void
-    private let texto = "Ejemplo de botón"
+    var texto = "Ejemplo de botón"
     
     var body: some View {
         Button(action: {

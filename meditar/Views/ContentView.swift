@@ -7,10 +7,12 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            CountdownView(startingNumber: 10)
+        ZStack {
+            Color.morado
+                .ignoresSafeArea()
+            
+            Text("Hola")
         }
-        .padding()
     }
 }
 

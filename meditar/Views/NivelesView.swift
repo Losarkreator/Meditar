@@ -6,38 +6,27 @@
 import SwiftUI
 
 struct NivelesView: View {
-    private let colorFondo = Color(#colorLiteral(red: 0.6078431373, green: 0.3176470588, blue: 0.8784313725, alpha: 1))
+    private let colorFondo = Color.morado
+    @State var isNiveles = true
     
     var body: some View {
-        
-        ZStack {
-            Rectangle()
-                .fill(colorFondo)
-                .ignoresSafeArea()
-            
-            VStack(alignment: .leading) {
-                BotonReutilizableView(
-                    action: {
-                        print("Botón reutilizable clicado")
-                    }, texto: "Principiante: 5''")
-                
-                BotonReutilizableView(
-                    action: {
-                        print("Botón reutilizable clicado")
-                    }, texto: "Intermedio: 15''")
-                BotonReutilizableView(
-                    action: {
-                        print("Botón reutilizable clicado")
-                    }, texto: "Experto: 30''")
-                BotonReutilizableView(
-                    action: {
-                        print("Botón reutilizable clicado")
-                    }, texto: "Novicio: 1h")
+        VStack(alignment: .leading) {
+            if isNiveles {
+                Text("Niveles: ")
+                    .font(.largeTitle)
+                    .fontWeight(.bold)
+                    .foregroundColor(Color.white)
+                    .padding(/*@START_MENU_TOKEN@*/.horizontal/*@END_MENU_TOKEN@*/)
+                    .padding(.vertical, 50.0)
+                .shadow(color: .black.opacity(0.3), radius: 5, x: 0, y: 5)
             }
+            
+            ListaView()
+            
         }
-//        .frame(maxWidth: .infinity, maxHeight: .infinity)
-//        .ignoresSafeArea()
-//        .background(colorFondo)
+        .background(colorFondo)
+        
+
         
     }
 }

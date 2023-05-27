@@ -6,12 +6,44 @@
 import SwiftUI
 
 struct ContentView: View {
+    private let distancia = 10.0
+    
     var body: some View {
         ZStack {
+            //MARK: - Color del fondo
             Color.morado
                 .ignoresSafeArea()
             
-            Text("Hola")
+            VStack(alignment: .leading) {
+                //MARK: - Titulo
+                Text("Niveles: ")
+                    .font(.largeTitle)
+                    .fontWeight(.bold)
+                    .foregroundColor(Color.white)
+                    .padding(.top, 80.0)
+                    .padding(.bottom, 60.0)
+                .shadow(color: .black.opacity(0.3), radius: 5, x: 0, y: 5)
+
+                //MARK: - Lista de niveles
+                VStack {
+                    LevelView(levelModel: LevelModel(id: 1, level: .principiante, color: .red, tiempo: 5))
+                        .padding(.vertical, distancia)
+                    
+                    LevelView(levelModel: LevelModel(id: 2, level: .intermedio, color: .orange, tiempo: 15))
+                        .padding(.vertical, distancia)
+                    
+                    LevelView(levelModel: LevelModel(id: 3, level: .experto, color: .amarillo, tiempo: 30))
+                        .padding(.vertical, distancia)
+                    
+                    LevelView(levelModel: LevelModel(id: 4, level: .maestro, color: .green, tiempo: 60))
+                        .padding(.vertical, distancia)
+                }
+                
+                //TODO: Aqui iria una explicación de la app si fuera necesario
+                
+                Spacer()
+            }
+            .padding(/*@START_MENU_TOKEN@*/.horizontal, 30.0/*@END_MENU_TOKEN@*/)
         }
     }
 }

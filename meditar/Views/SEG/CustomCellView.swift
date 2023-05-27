@@ -1,9 +1,6 @@
-//
 //  CustomCellView.swift
 //  meditar
-//
 //  Created by Losark on 27/5/23.
-//
 
 import SwiftUI
 

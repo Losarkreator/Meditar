@@ -8,57 +8,68 @@ struct CountdownView: View {
     @StateObject private var viewModel: CountdownViewModel
     @State private var savedInitialValue: Int
     @State private var isCountdownRunning = false
-
-
+    
+    
     init(startingNumber: Int) {
         _viewModel = StateObject(wrappedValue: CountdownViewModel(startingNumber: startingNumber))
         _savedInitialValue = State(initialValue: startingNumber)
     }
-
+    
     var body: some View {
         VStack {
-            Spacer()
-            ZStack {
-                Circle()
-                    .stroke(lineWidth: 40)
-                    .opacity(0.3)
-                    .foregroundColor(.blue)
-                    .frame(width: 200.0, height: 200.0)
+            VStack { //Margenes
+                Spacer()
                 
-                //MARK: - ANIMACION
-                Circle()
-                    .trim(from: 0, to: CGFloat(viewModel.currentNumber) / CGFloat(savedInitialValue))
-                        .stroke(Color.azul, lineWidth: 40)
-                        .rotationEffect(.degrees(-90))
-                        .frame(width: 200, height: 200)
-                        .animation(.easeInOut)
-                
-                Text("\(viewModel.currentNumber)")
+                //Contador Numeros
+                Text("\(viewModel.currentNumber)' 23''")
                     .font(.largeTitle)
-                    .padding()
-                    .foregroundColor(.blue)
-            }
-            
-            Spacer()
-            
-            //MARK: - BOTON
-            Button(action: {
-                if isCountdownRunning {
-                    viewModel.resetCountdown()
-                } else {
-                viewModel.startCountdown()
+                    .fontWeight(.black)
+                    .padding(40.0)
+                    .foregroundColor(.blanco)
+                
+                ZStack { // CuentAtras Circulo
+                    Circle()
+                        .stroke(lineWidth: 40)
+                        .opacity(0.05)
+                        .foregroundColor(.negro)
+                        .frame(width: 300.0, height: 300.0)
+                    Circle()
+                        .trim(from: 0, to: CGFloat(viewModel.currentNumber) / CGFloat(savedInitialValue))
+                        .stroke(Color.blanco, lineWidth: 40)
+                        .rotationEffect(.degrees(-90))
+                        .frame(width: 300, height: 300)
+                        .animation(.easeInOut)
+                    
+                    Image("MeditIcon")
+                        .aspectRatio(contentMode: .fit)
+                    
                 }
                 
-                isCountdownRunning.toggle()
-            }) {
-                Text(isCountdownRunning ? "Reiniciar" : "Empezar")
-                    .font(.title)
-                    .padding()
-                    .background(Color.blue)
-                    .foregroundColor(.white)
-                    .cornerRadius(10)
+                Spacer()
+                
+                //MARK: - BOTON
+                Button(action: {
+                    if isCountdownRunning {
+                        viewModel.resetCountdown()
+                    } else {
+                        viewModel.startCountdown()
+                    }
+                    isCountdownRunning.toggle()
+                }) {
+                    //"pause.circle"
+                    Image(systemName: isCountdownRunning ? "stop.circle" : "play.circle")
+
+                        .resizable()
+                        .frame(width: 100.0, height: 100.0)
+                        .foregroundColor(.blanco)
+                }
             }
+            .padding(.horizontal, 20.0)
+            .padding(.bottom, 40.0)
         }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .background(Color.amarillo)
+        .edgesIgnoringSafeArea(.all)
     }
 }
 

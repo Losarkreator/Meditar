@@ -3,7 +3,7 @@
 //  Created by Losark on 27/5/23.
 
 import SwiftUI
-// 56CCF2
+
 extension Color {
     static let rojo = Color(#colorLiteral(red: 0.9215686275, green: 0.3411764706, blue: 0.3411764706, alpha: 1))
     static let morado = Color(#colorLiteral(red: 0.6078431373, green: 0.3176470588, blue: 0.8784313725, alpha: 1))

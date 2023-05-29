@@ -1,14 +1,13 @@
 //  NavigationButtonExample.swift
 //  meditar
-//  Created by Losark on 27/5/23.
-
+//  Created by Losark on 29/5/23.
 
 import SwiftUI
 
-struct NavigationButton<Destination: View>: View {
+struct CustomNavigationButton<Destination: View>: View {
     var title: String
     var destination: Destination
-    
+
     var body: some View {
         NavigationLink(destination: destination) {
             Text(title)
@@ -27,8 +26,8 @@ struct NavigationButtonExample: View {
             VStack {
                 Text("Pantalla de inicio")
                     .font(.largeTitle)
-                
-                NavigationButton(title: "TEXTO nivel", destination: AnotherView())
+
+                CustomNavigationButton(title: "TEXTO nivel", destination: AnotherView())
             }
         }
     }
@@ -39,14 +38,14 @@ struct AnotherView: View {
         VStack {
             Text("Otra pantalla")
                 .font(.largeTitle)
-            
+
             // Contenido adicional de la pantalla
         }
     }
 }
 
 
-struct NavigationButton_Previews: PreviewProvider {
+struct CustomNavigationButton_Previews: PreviewProvider {
     static var previews: some View {
         NavigationButtonExample()
     }

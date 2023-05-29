@@ -25,23 +25,25 @@ struct ContentView: View {
                 .shadow(color: .black.opacity(0.3), radius: 5, x: 0, y: 5)
 
                 //MARK: - Lista de niveles
-                VStack {
-                    LevelView(levelModel: LevelModel(id: 1, level: .principiante, color: .red, tiempo: 5))
-                        .padding(.vertical, distancia)
-                    
-                    LevelView(levelModel: LevelModel(id: 2, level: .intermedio, color: .orange, tiempo: 15))
-                        .padding(.vertical, distancia)
-                    
-                    LevelView(levelModel: LevelModel(id: 3, level: .experto, color: .amarillo, tiempo: 30))
-                        .padding(.vertical, distancia)
-                    
-                    LevelView(levelModel: LevelModel(id: 4, level: .maestro, color: .green, tiempo: 60))
-                        .padding(.vertical, distancia)
+                NavigationView {
+                    VStack {
+                        LevelViewNavigationButton(levelModel: LevelModel(id: 1, level: .principiante, color: Color.rojo, tiempo: 5), destination: CountdownView(startingNumber: 5))
+                        /*
+                        LevelView(levelModel: LevelModel(id: 1, level: .principiante, color: .red, tiempo: 5))
+                            .padding(.vertical, distancia)
+    
+                        LevelView(levelModel: LevelModel(id: 2, level: .intermedio, color: .orange, tiempo: 15))
+                            .padding(.vertical, distancia)
+    
+                        LevelView(levelModel: LevelModel(id: 3, level: .experto, color: .amarillo, tiempo: 30))
+                            .padding(.vertical, distancia)
+    
+                        LevelView(levelModel: LevelModel(id: 4, level: .maestro, color: .green, tiempo: 60))
+                            .padding(.vertical, distancia)
+                         */
+                    }
                 }
-                
-                //TODO: Aqui iria una explicación de la app si fuera necesario
-                
-                Spacer()
+//                .navigationViewStyle(StackNavigationViewStyle())
             }
             .padding(/*@START_MENU_TOKEN@*/.horizontal, 30.0/*@END_MENU_TOKEN@*/)
         }

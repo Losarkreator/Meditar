@@ -7,7 +7,9 @@ import SwiftUI
 struct LevelsView: View {
     private func appDescription() -> String {
         let mensaje = """
-    ¡Bienvenido a nuestra aplicación de meditación personalizada! Con nuestra intuitiva y elegante interfaz, podrás cronometrar tus sesiones de meditación de manera efectiva y adaptada a tu nivel de práctica. Ya seas principiante, intermedio o experto, nuestra aplicación te proporcionará los tiempos adecuados para cada nivel, guiándote hacia una experiencia de meditación más profunda y satisfactoria.
+    ¡Bienvenido a nuestra aplicación de meditación personalizada!
+    
+    Con nuestra intuitiva y elegante interfaz, podrás cronometrar tus sesiones de meditación de manera efectiva y adaptada a tu nivel de práctica. Ya seas principiante, intermedio o experto, nuestra aplicación te proporcionará los tiempos adecuados para cada nivel, guiándote hacia una experiencia de meditación más profunda y satisfactoria.
     
     Con solo unos simples toques, podrás seleccionar tu nivel de práctica y comenzar tu sesión de meditación. Nuestra aplicación te ofrecerá el tiempo recomendado para cada nivel, permitiéndote sumergirte en un estado de tranquilidad y enfoque.
     

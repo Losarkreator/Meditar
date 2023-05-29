@@ -1,13 +1,13 @@
-//  CountdownView.swift
-//  meditar
-//  Created by Losark on 27/5/23.
-
 import SwiftUI
+import AudioToolbox
 
-struct CountdownView: View {
+struct ProbarSonidos: View {
     @StateObject private var viewModel: CountdownViewModel
     @State private var savedInitialValue: Int
     @State private var isCountdownRunning = false
+    @State private var numeroSonido: Int = 1035
+    // Final 1030 1035
+    // 1050 1060 1103
     
     
     init(startingNumber: Int) {
@@ -20,7 +20,7 @@ struct CountdownView: View {
             VStack { //Margenes
                 Spacer()
                 //MARK: - Contador Numeros
-                Text("\(viewModel.currentNumber)' 23''")
+                Text("\(viewModel.currentNumber)")
                     .font(.largeTitle)
                     .fontWeight(.black)
                     .padding(40.0)
@@ -40,20 +40,21 @@ struct CountdownView: View {
                         .frame(width: 300, height: 300)
                         .animation(.easeInOut)
                     
-                    Image("MeditIcon")
-                        .aspectRatio(contentMode: .fit)
-                    
                 }
-                
+                Spacer()
+                Text(String("Sonido: \(numeroSonido)"))
+                    .font(.title)
+                    .foregroundColor(.blanco)
                 Spacer()
                 
                 //MARK: - BOTON
                 Button(action: {
                     if isCountdownRunning {
                         viewModel.resetCountdown()
+                        numeroSonido += 1
                     } else {
                         viewModel.startCountdown()
-                        viewModel.playSystemSound()
+                        viewModel.playSystemSound(soundID: SystemSoundID(numeroSonido))
                     }
                     isCountdownRunning.toggle()
                 }) {
@@ -72,8 +73,8 @@ struct CountdownView: View {
     }
 }
 
-struct CountdownView_Previews: PreviewProvider {
+struct ProbarSonidos_Previews: PreviewProvider {
     static var previews: some View {
-        CountdownView(startingNumber: 2)
+        ProbarSonidos(startingNumber: 2)
     }
 }

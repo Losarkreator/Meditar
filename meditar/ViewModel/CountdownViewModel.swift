@@ -3,6 +3,8 @@
 //  Created by Losark on 27/5/23.
 
 import SwiftUI
+import AudioToolbox // Sonidos del sistema
+//import AVFoundation //Para añadir un sonido
 
 class CountdownViewModel: ObservableObject {
     @Published var currentNumber: Int
@@ -20,6 +22,7 @@ class CountdownViewModel: ObservableObject {
             return
         }
         
+        //TODO: Pasar a minutos con segundos
         timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { [weak self] _ in
             guard let self = self else {
                 return
@@ -28,6 +31,7 @@ class CountdownViewModel: ObservableObject {
             if self.currentNumber == 0 {
                 self.timer?.invalidate()
                 self.timer = nil
+                playSystemSound(soundID: 1030)
             }
         }
     }
@@ -38,6 +42,8 @@ class CountdownViewModel: ObservableObject {
         currentNumber = startingNumber
     }
     
-    
+    func playSystemSound(soundID: SystemSoundID = 1104) {
+        AudioServicesPlaySystemSound(soundID)
+    }
     
 }

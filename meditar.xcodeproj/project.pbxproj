@@ -11,6 +11,7 @@
 		87229D162A21FA8C00BE334B /* CountdownViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87229D152A21FA8C00BE334B /* CountdownViewModel.swift */; };
 		87229D1A2A2202A500BE334B /* LevelViewNavigationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87229D192A2202A500BE334B /* LevelViewNavigationButton.swift */; };
 		874A37D62A226C0800043EAE /* LevelModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 874A37D52A226C0800043EAE /* LevelModel.swift */; };
+		8777E6102A272F4000996AAF /* Provar sonidos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8777E60F2A272F4000996AAF /* Provar sonidos.swift */; };
 		8781DEA72A22566700BA8142 /* Colores.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8781DEA62A22566700BA8142 /* Colores.swift */; };
 		8785F7F22A2496A7001069E9 /* CustomNavigationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8785F7F12A2496A7001069E9 /* CustomNavigationButton.swift */; };
 		879009F62A21E57400E70B8D /* meditarApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 879009F52A21E57400E70B8D /* meditarApp.swift */; };
@@ -25,6 +26,7 @@
 		87229D152A21FA8C00BE334B /* CountdownViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownViewModel.swift; sourceTree = "<group>"; };
 		87229D192A2202A500BE334B /* LevelViewNavigationButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelViewNavigationButton.swift; sourceTree = "<group>"; };
 		874A37D52A226C0800043EAE /* LevelModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelModel.swift; sourceTree = "<group>"; };
+		8777E60F2A272F4000996AAF /* Provar sonidos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Provar sonidos.swift"; sourceTree = "<group>"; };
 		8781DEA62A22566700BA8142 /* Colores.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colores.swift; sourceTree = "<group>"; };
 		8785F7F12A2496A7001069E9 /* CustomNavigationButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationButton.swift; sourceTree = "<group>"; };
 		879009F22A21E57400E70B8D /* meditar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = meditar.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -78,6 +80,7 @@
 			isa = PBXGroup;
 			children = (
 				8785F7F12A2496A7001069E9 /* CustomNavigationButton.swift */,
+				8777E60F2A272F4000996AAF /* Provar sonidos.swift */,
 			);
 			path = SEG;
 			sourceTree = "<group>";
@@ -204,6 +207,7 @@
 				87229D122A21F76E00BE334B /* CountdownView.swift in Sources */,
 				879009F82A21E57400E70B8D /* ContentView.swift in Sources */,
 				8785F7F22A2496A7001069E9 /* CustomNavigationButton.swift in Sources */,
+				8777E6102A272F4000996AAF /* Provar sonidos.swift in Sources */,
 				879009F62A21E57400E70B8D /* meditarApp.swift in Sources */,
 				874A37D62A226C0800043EAE /* LevelModel.swift in Sources */,
 				8781DEA72A22566700BA8142 /* Colores.swift in Sources */,

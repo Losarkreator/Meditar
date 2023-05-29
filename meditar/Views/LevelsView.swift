@@ -22,7 +22,6 @@ struct LevelsView: View {
     @State private var isDescriptionVisible = false
     
     var body: some View {
-        
         NavigationView {
             ZStack {
                 //MARK: - Color del fondo
@@ -31,7 +30,7 @@ struct LevelsView: View {
                 
                 VStack(alignment: .leading) {
                     //MARK: - Titulo
-                    Text("Niveles: ")
+                    Text("Niveles ")
                         .font(.largeTitle)
                         .fontWeight(.bold)
                         .foregroundColor(Color.white)
@@ -71,7 +70,6 @@ struct LevelsView: View {
                                     )
                                 
                             }
-                            
                             Spacer()
                         }
                         //MARK: - Descripción
@@ -85,7 +83,7 @@ struct LevelsView: View {
                            
                             Button(action: {
                                 isDescriptionVisible = false
-                                //TODO: que se cierre cuando tocas en otro sitio
+                                //TODO: hacer que se cierre cuando tocas en otro sitio
                             }) {
                                 Image(systemName: "chevron.up")
                                     .font(.system(size: 20, weight: .bold))
@@ -93,7 +91,6 @@ struct LevelsView: View {
                                     .frame(width: 40, height: 60)
                                     .background(Circle().foregroundColor(.morado))
                             }
-                            
                         }
                         .background(
                             RoundedRectangle(cornerRadius: 20)
@@ -105,9 +102,10 @@ struct LevelsView: View {
                 }
                 .padding(/*@START_MENU_TOKEN@*/.horizontal, 30.0/*@END_MENU_TOKEN@*/)
             }
+            .navigationBarTitle("Niveles")
+            .navigationBarHidden(true)
         }
-        //TODO: Añadir titulo invisible
-        
+        .accentColor(.blanco)
     }
 }
 

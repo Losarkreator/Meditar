@@ -10,24 +10,21 @@
 		87229D122A21F76E00BE334B /* CountdownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87229D112A21F76E00BE334B /* CountdownView.swift */; };
 		87229D162A21FA8C00BE334B /* CountdownViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87229D152A21FA8C00BE334B /* CountdownViewModel.swift */; };
 		87229D1A2A2202A500BE334B /* LevelViewNavigationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87229D192A2202A500BE334B /* LevelViewNavigationButton.swift */; };
-		874A37D42A22690900043EAE /* CustomCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 874A37D32A22690900043EAE /* CustomCellView.swift */; };
 		874A37D62A226C0800043EAE /* LevelModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 874A37D52A226C0800043EAE /* LevelModel.swift */; };
-		8781DEA42A2249DE00BA8142 /* ListaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8781DEA32A2249DE00BA8142 /* ListaView.swift */; };
 		8781DEA72A22566700BA8142 /* Colores.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8781DEA62A22566700BA8142 /* Colores.swift */; };
 		8785F7F22A2496A7001069E9 /* CustomNavigationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8785F7F12A2496A7001069E9 /* CustomNavigationButton.swift */; };
 		879009F62A21E57400E70B8D /* meditarApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 879009F52A21E57400E70B8D /* meditarApp.swift */; };
 		879009F82A21E57400E70B8D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 879009F72A21E57400E70B8D /* ContentView.swift */; };
 		879009FA2A21E57500E70B8D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 879009F92A21E57500E70B8D /* Assets.xcassets */; };
 		879009FD2A21E57500E70B8D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 879009FC2A21E57500E70B8D /* Preview Assets.xcassets */; };
+		879C463D2A249E9300FFB344 /* LevelsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 879C463C2A249E9300FFB344 /* LevelsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		87229D112A21F76E00BE334B /* CountdownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownView.swift; sourceTree = "<group>"; };
 		87229D152A21FA8C00BE334B /* CountdownViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownViewModel.swift; sourceTree = "<group>"; };
 		87229D192A2202A500BE334B /* LevelViewNavigationButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelViewNavigationButton.swift; sourceTree = "<group>"; };
-		874A37D32A22690900043EAE /* CustomCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCellView.swift; sourceTree = "<group>"; };
 		874A37D52A226C0800043EAE /* LevelModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelModel.swift; sourceTree = "<group>"; };
-		8781DEA32A2249DE00BA8142 /* ListaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListaView.swift; sourceTree = "<group>"; };
 		8781DEA62A22566700BA8142 /* Colores.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colores.swift; sourceTree = "<group>"; };
 		8785F7F12A2496A7001069E9 /* CustomNavigationButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationButton.swift; sourceTree = "<group>"; };
 		879009F22A21E57400E70B8D /* meditar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = meditar.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -35,6 +32,7 @@
 		879009F72A21E57400E70B8D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		879009F92A21E57500E70B8D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		879009FC2A21E57500E70B8D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		879C463C2A249E9300FFB344 /* LevelsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +50,7 @@
 			isa = PBXGroup;
 			children = (
 				87229D192A2202A500BE334B /* LevelViewNavigationButton.swift */,
+				879C463C2A249E9300FFB344 /* LevelsView.swift */,
 				879009F72A21E57400E70B8D /* ContentView.swift */,
 				87229D112A21F76E00BE334B /* CountdownView.swift */,
 				874A37D72A22781900043EAE /* SEG */,
@@ -78,8 +77,6 @@
 		874A37D72A22781900043EAE /* SEG */ = {
 			isa = PBXGroup;
 			children = (
-				8781DEA32A2249DE00BA8142 /* ListaView.swift */,
-				874A37D32A22690900043EAE /* CustomCellView.swift */,
 				8785F7F12A2496A7001069E9 /* CustomNavigationButton.swift */,
 			);
 			path = SEG;
@@ -201,11 +198,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				879C463D2A249E9300FFB344 /* LevelsView.swift in Sources */,
 				87229D162A21FA8C00BE334B /* CountdownViewModel.swift in Sources */,
-				8781DEA42A2249DE00BA8142 /* ListaView.swift in Sources */,
 				87229D1A2A2202A500BE334B /* LevelViewNavigationButton.swift in Sources */,
 				87229D122A21F76E00BE334B /* CountdownView.swift in Sources */,
-				874A37D42A22690900043EAE /* CustomCellView.swift in Sources */,
 				879009F82A21E57400E70B8D /* ContentView.swift in Sources */,
 				8785F7F22A2496A7001069E9 /* CustomNavigationButton.swift in Sources */,
 				879009F62A21E57400E70B8D /* meditarApp.swift in Sources */,

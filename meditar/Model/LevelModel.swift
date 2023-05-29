@@ -5,6 +5,9 @@
 import Foundation
 import SwiftUI
 
+
+//TODO: Hacer que segun el nivel escogido devuelva una serie de variables
+
 struct LevelModel {
     var id: Int
     var level: Levels
@@ -17,6 +20,7 @@ enum Levels {
     case intermedio
     case experto
     case maestro
+    case lama
     
     var levelString: String {
         switch self {
@@ -28,6 +32,8 @@ enum Levels {
             return "Experto"
         case .maestro:
             return "Maestro"
+        case .lama:
+            return "Lama"
         }
     }
 }

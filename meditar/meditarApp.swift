@@ -1,9 +1,6 @@
-//
 //  meditarApp.swift
 //  meditar
-//
 //  Created by Losark on 27/5/23.
-//
 
 import SwiftUI
 
@@ -11,7 +8,7 @@ import SwiftUI
 struct meditarApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            LevelsView()
         }
     }
 }

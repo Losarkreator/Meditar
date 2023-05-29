@@ -19,7 +19,6 @@ struct LevelsView: View {
     }
     @State private var isDescriptionVisible = false
     
-    
     var body: some View {
         
         NavigationView {
@@ -97,7 +96,7 @@ struct LevelsView: View {
                         .background(
                             RoundedRectangle(cornerRadius: 20)
                                 .foregroundColor(.black.opacity(0.2)))
-                        .clipped()
+                        .clipped() //Evita que el texto se desborde
                         .padding(.top, 20.0)
                     }
                     

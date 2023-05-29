@@ -33,7 +33,7 @@ enum Levels {
         case .maestro:
             return "Maestro"
         case .lama:
-            return "Lama"
+            return "Custom"
         }
     }
 }

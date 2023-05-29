@@ -5,6 +5,17 @@
 import SwiftUI
 
 struct LevelsView: View {
+    private let appDescription = """
+    ¡Bienvenido a nuestra aplicación de meditación personalizada! Con nuestra intuitiva y elegante interfaz, podrás cronometrar tus sesiones de meditación de manera efectiva y adaptada a tu nivel de práctica. Ya seas principiante, intermedio o experto, nuestra aplicación te proporcionará los tiempos adecuados para cada nivel, guiándote hacia una experiencia de meditación más profunda y satisfactoria.
+
+    Con solo unos simples toques, podrás seleccionar tu nivel de práctica y comenzar tu sesión de meditación. Nuestra aplicación te ofrecerá el tiempo recomendado para cada nivel, permitiéndote sumergirte en un estado de tranquilidad y enfoque.
+
+    Además, nuestra aplicación también te brinda la flexibilidad de personalizar la duración de tus sesiones de meditación, para adaptarse a tus necesidades y preferencias individuales. Ya sea que desees meditar durante unos minutos o sumergirte en una sesión más prolongada, estamos aquí para acompañarte en tu viaje de meditación.
+
+    ¡Permite que nuestra app te guíe hacia un mayor bienestar y paz interior en tu vida diaria!
+    """
+
+    
     var body: some View {
         
         NavigationView {
@@ -31,10 +42,24 @@ struct LevelsView: View {
                         
                         LevelViewNavigationButton(levelModel: LevelModel(id: 3, level: .experto, color: Color.amarillo, tiempo: 30), destination: CountdownView(startingNumber: 30))
                         
-                        LevelViewNavigationButton(levelModel: LevelModel(id: 1, level: .maestro, color: Color.green, tiempo: 60), destination: CountdownView(startingNumber: 60))
+                        LevelViewNavigationButton(levelModel: LevelModel(id: 4, level: .maestro, color: Color.green, tiempo: 60), destination: CountdownView(startingNumber: 60))
                         
-                        LevelViewNavigationButton(levelModel: LevelModel(id: 1, level: .lama, color: Color.azul, tiempo: 120), destination: CountdownView(startingNumber: 120))
+                        LevelViewNavigationButton(levelModel: LevelModel(id: 5, level: .lama, color: Color.azul, tiempo: 0), destination: CountdownView(startingNumber: 0))
                     }
+                    
+                    //MARK: - Descripción
+                    ScrollView {
+                        Text(appDescription)
+                            .font(.body)
+                            .foregroundColor(Color.white)
+                            .padding(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
+                    }
+                    .background(
+                        RoundedRectangle(cornerRadius: 20)
+                            .foregroundColor(.black.opacity(0.2))
+                    )
+                    .padding(.top, 20.0)
+                    
                     Spacer()
                 }
                 .padding(/*@START_MENU_TOKEN@*/.horizontal, 30.0/*@END_MENU_TOKEN@*/)

@@ -9,7 +9,7 @@ struct ContentView: View {
     private let distancia = 10.0
     
     var body: some View {
-        Text("Texto")
+        Text("ContentView")
     }
 }
 

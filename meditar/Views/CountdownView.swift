@@ -19,11 +19,17 @@ struct CountdownView: View {
         VStack {
             VStack { //Margenes
                 Spacer()
+                //MARK: - Titulo
+                Text("Nivel Principiante") //\() 
+                    .font(.largeTitle)
+                    .fontWeight(.black)
+                    .foregroundColor(.blanco)
+//                    .padding(40.0)
                 //MARK: - Contador Numeros
                 Text("\(viewModel.currentNumber)' 23''")
                     .font(.largeTitle)
                     .fontWeight(.black)
-                    .padding(40.0)
+                    .padding(.bottom, 40.0)
                     .foregroundColor(.blanco)
                 
                 //MARK: - CuentAtras Circulo

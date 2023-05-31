@@ -53,7 +53,6 @@
 			children = (
 				87229D192A2202A500BE334B /* LevelViewNavigationButton.swift */,
 				879C463C2A249E9300FFB344 /* LevelsView.swift */,
-				879009F72A21E57400E70B8D /* ContentView.swift */,
 				87229D112A21F76E00BE334B /* CountdownView.swift */,
 				874A37D72A22781900043EAE /* SEG */,
 			);
@@ -79,6 +78,7 @@
 		874A37D72A22781900043EAE /* SEG */ = {
 			isa = PBXGroup;
 			children = (
+				879009F72A21E57400E70B8D /* ContentView.swift */,
 				8785F7F12A2496A7001069E9 /* CustomNavigationButton.swift */,
 				8777E60F2A272F4000996AAF /* Provar sonidos.swift */,
 			);

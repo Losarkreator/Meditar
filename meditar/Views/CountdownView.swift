@@ -52,9 +52,11 @@ struct CountdownView: View {
                     if isCountdownRunning {
                         viewModel.resetCountdown()
                         viewModel.playSystemSound(soundID: 1132)
+                        viewModel.playVibration()
                     } else {
                         viewModel.startCountdown()
                         viewModel.playSystemSound()
+                        viewModel.playVibration()
                     }
                     isCountdownRunning.toggle()
                 }) {

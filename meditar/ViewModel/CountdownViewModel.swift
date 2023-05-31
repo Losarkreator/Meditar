@@ -31,6 +31,7 @@ class CountdownViewModel: ObservableObject {
             if self.currentNumber == 0 {
                 self.timer?.invalidate()
                 self.timer = nil
+//                playSystemSound()
                 playSystemSound(soundID: 1030)
             }
         }

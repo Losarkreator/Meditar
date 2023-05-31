@@ -5,10 +5,8 @@ struct ProbarSonidos: View {
     @StateObject private var viewModel: CountdownViewModel
     @State private var savedInitialValue: Int
     @State private var isCountdownRunning = false
-    @State private var numeroSonido: Int = 1035
-    // Final 1030 1035
-    // 1050 1060 1103
-    
+    @State private var numeroSonido: Int = 1132
+    // Rewind 1103 1118 1129
     
     init(startingNumber: Int) {
         _viewModel = StateObject(wrappedValue: CountdownViewModel(startingNumber: startingNumber))
@@ -51,6 +49,7 @@ struct ProbarSonidos: View {
                 Button(action: {
                     if isCountdownRunning {
                         viewModel.resetCountdown()
+                        viewModel.playSystemSound(soundID: SystemSoundID(numeroSonido))
                         numeroSonido += 1
                     } else {
                         viewModel.startCountdown()

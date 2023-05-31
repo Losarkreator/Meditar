@@ -51,6 +51,7 @@ struct CountdownView: View {
                 Button(action: {
                     if isCountdownRunning {
                         viewModel.resetCountdown()
+                        viewModel.playSystemSound(soundID: 1132)
                     } else {
                         viewModel.startCountdown()
                         viewModel.playSystemSound()

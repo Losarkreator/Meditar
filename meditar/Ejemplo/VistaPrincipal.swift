@@ -1,23 +1,24 @@
+//
 //  VistaPrincipal.swift
 //  meditar
+//
 //  Created by Losark on 31/5/23.
+//
 
 import SwiftUI
 
 struct VistaPrincipal: View {
-    @StateObject private var viewModel = ViewModel()
+    @ObservedObject var viewModel: ModeloVista
     
     var body: some View {
         VStack {
-            ForEach(viewModel.vistas, id: \.nivel) { vista in
-                CapsulaView(vista: vista)
-            }
+            Text("Nivel: \(viewModel.principiante.nivel)")
         }
     }
 }
 
 struct VistaPrincipal_Previews: PreviewProvider {
     static var previews: some View {
-        VistaPrincipal()
+        VistaPrincipal(viewModel: ModeloVista())
     }
 }

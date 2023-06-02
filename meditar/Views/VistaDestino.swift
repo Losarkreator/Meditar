@@ -8,25 +8,25 @@ struct VistaDestino: View {
     var modeloDeDatos: ModeloDatos
     @StateObject private var viewModel = ModeloVista()
     @State private var isCountdownRunning = false
-    //@State private var savedInitialValue: Int
+    @State private var currentNumber = 0
+    @State private var startingTime = 0
+    @State private var timer: Timer?
     
     var body: some View {
         VStack { //Fondo
             VStack { //Margenes
                 Spacer()
-                
                 //MARK: - Titulo
-                Text("Nivel: \(modeloDeDatos.nivel)") //\()
+                Text("Nivel: \(modeloDeDatos.nivel)")
                     .font(.largeTitle)
                     .fontWeight(.black)
                     .foregroundColor(.blanco)
                 //MARK: - Contador Numeros
-                Text("\(modeloDeDatos.tiempo)' 00''")
+                Text("\(formatTime(seconds: currentNumber))")
                     .font(.largeTitle)
                     .fontWeight(.black)
                     .padding(.bottom, 40.0)
                     .foregroundColor(.blanco)
-                //Spacer()
                 
                 //MARK: - CuentAtras Circulo
                 ZStack {
@@ -35,15 +35,16 @@ struct VistaDestino: View {
                         .opacity(0.05)
                         .foregroundColor(.negro)
                         .frame(width: 300.0, height: 300.0)
+                    
                     Circle()
-                        .trim(from: 0, to: CGFloat(modeloDeDatos.tiempo) / CGFloat(5)) //CAMBIAR 5 por Starting number
+                        .trim(from: 0, to: CGFloat(currentNumber) / CGFloat(startingTime))
                         .stroke(Color.blanco, lineWidth: 40)
                         .rotationEffect(.degrees(-90))
                         .frame(width: 300, height: 300)
                         .animation(.easeInOut)
+
                     Image("MeditIcon")
                         .aspectRatio(contentMode: .fit)
-                    
                 }
                 
                 Spacer()
@@ -51,11 +52,11 @@ struct VistaDestino: View {
                 //MARK: - BOTON
                 Button(action: {
                     if !isCountdownRunning {
-                        //viewModel.startCountdown()
+                        startCountdown(with: currentNumber)
                         viewModel.playSystemSound()
                         viewModel.playVibration()
                     } else {
-                        //viewModel.resetCountdown()
+                        resetCountdown()
                         viewModel.playSystemSound(soundID: 1132)
                         viewModel.playVibration()
                     }
@@ -74,7 +75,37 @@ struct VistaDestino: View {
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(modeloDeDatos.color)
         .edgesIgnoringSafeArea(.all)
+        .onAppear {
+            startingTime = modeloDeDatos.tiempo * 60
+            currentNumber = startingTime
+        }
     }
+    
+    //MARK: - Funciones
+    func startCountdown(with minutos: Int) {
+        resetCountdown()
+        currentNumber = minutos
+        timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { _ in
+            currentNumber -= 1
+            // Llega a 0
+            if currentNumber == 0 {
+                timer?.invalidate()
+                viewModel.playSystemSound(soundID: 1030)
+            }
+        }
+    }
+    
+    func resetCountdown() {
+        currentNumber = startingTime
+        timer?.invalidate()
+    }
+    
+    func formatTime(seconds: Int) -> String {
+        let minutes = seconds / 60
+        let remainingSeconds = seconds % 60
+        return String(format: "%d:%02d", minutes, remainingSeconds)
+    }
+    
 }
 
 struct VistaDestino_Previews: PreviewProvider {

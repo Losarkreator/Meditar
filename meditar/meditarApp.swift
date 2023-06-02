@@ -8,7 +8,9 @@ import SwiftUI
 struct meditarApp: App {
     var body: some Scene {
         WindowGroup {
-            LevelsView()
+//            LevelsView()
+            let modeloVista = ModeloVista()
+            Temporizador(modeloDeDatos: modeloVista.principiante)
         }
     }
 }

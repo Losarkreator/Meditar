@@ -19,6 +19,7 @@
 		8777E6282A27A89E00996AAF /* ModeloVista.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8777E6272A27A89E00996AAF /* ModeloVista.swift */; };
 		8781DEA72A22566700BA8142 /* Colores.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8781DEA62A22566700BA8142 /* Colores.swift */; };
 		8785F7F22A2496A7001069E9 /* CustomNavigationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8785F7F12A2496A7001069E9 /* CustomNavigationButton.swift */; };
+		878A57392A29E66400EB5328 /* Temporizador.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878A57382A29E66400EB5328 /* Temporizador.swift */; };
 		879009F62A21E57400E70B8D /* meditarApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 879009F52A21E57400E70B8D /* meditarApp.swift */; };
 		879009F82A21E57400E70B8D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 879009F72A21E57400E70B8D /* ContentView.swift */; };
 		879009FA2A21E57500E70B8D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 879009F92A21E57500E70B8D /* Assets.xcassets */; };
@@ -39,6 +40,7 @@
 		8777E6272A27A89E00996AAF /* ModeloVista.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModeloVista.swift; sourceTree = "<group>"; };
 		8781DEA62A22566700BA8142 /* Colores.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colores.swift; sourceTree = "<group>"; };
 		8785F7F12A2496A7001069E9 /* CustomNavigationButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationButton.swift; sourceTree = "<group>"; };
+		878A57382A29E66400EB5328 /* Temporizador.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Temporizador.swift; sourceTree = "<group>"; };
 		879009F22A21E57400E70B8D /* meditar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = meditar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		879009F52A21E57400E70B8D /* meditarApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = meditarApp.swift; sourceTree = "<group>"; };
 		879009F72A21E57400E70B8D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -61,8 +63,11 @@
 		87229D102A21F74E00BE334B /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				8777E61F2A27A81C00996AAF /* VistaPrincipal.swift */,
 				879C463C2A249E9300FFB344 /* LevelsView.swift */,
+				8777E6212A27A84300996AAF /* BotonNavigation.swift */,
 				87229D192A2202A500BE334B /* LevelViewNavigationButton.swift */,
+				8777E6232A27A86E00996AAF /* VistaDestino.swift */,
 				87229D112A21F76E00BE334B /* CountdownView.swift */,
 				874A37D72A22781900043EAE /* SEG */,
 			);
@@ -72,6 +77,7 @@
 		87229D132A21F79100BE334B /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				8777E6252A27A87B00996AAF /* ModeloDatos.swift */,
 				874A37D52A226C0800043EAE /* LevelModel.swift */,
 			);
 			path = Model;
@@ -81,6 +87,7 @@
 			isa = PBXGroup;
 			children = (
 				87229D152A21FA8C00BE334B /* CountdownViewModel.swift */,
+				8777E6272A27A89E00996AAF /* ModeloVista.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -88,6 +95,7 @@
 		874A37D72A22781900043EAE /* SEG */ = {
 			isa = PBXGroup;
 			children = (
+				878A57382A29E66400EB5328 /* Temporizador.swift */,
 				879009F72A21E57400E70B8D /* ContentView.swift */,
 				8785F7F12A2496A7001069E9 /* CustomNavigationButton.swift */,
 				8777E60F2A272F4000996AAF /* Provar sonidos.swift */,
@@ -98,11 +106,6 @@
 		8777E61E2A27A7D900996AAF /* Ejemplo */ = {
 			isa = PBXGroup;
 			children = (
-				8777E6252A27A87B00996AAF /* ModeloDatos.swift */,
-				8777E61F2A27A81C00996AAF /* VistaPrincipal.swift */,
-				8777E6212A27A84300996AAF /* BotonNavigation.swift */,
-				8777E6232A27A86E00996AAF /* VistaDestino.swift */,
-				8777E6272A27A89E00996AAF /* ModeloVista.swift */,
 			);
 			path = Ejemplo;
 			sourceTree = "<group>";
@@ -237,6 +240,7 @@
 				879009F62A21E57400E70B8D /* meditarApp.swift in Sources */,
 				874A37D62A226C0800043EAE /* LevelModel.swift in Sources */,
 				8777E6282A27A89E00996AAF /* ModeloVista.swift in Sources */,
+				878A57392A29E66400EB5328 /* Temporizador.swift in Sources */,
 				8777E6222A27A84300996AAF /* BotonNavigation.swift in Sources */,
 				8781DEA72A22566700BA8142 /* Colores.swift in Sources */,
 			);

@@ -7,16 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		87229D122A21F76E00BE334B /* CountdownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87229D112A21F76E00BE334B /* CountdownView.swift */; };
-		87229D162A21FA8C00BE334B /* CountdownViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87229D152A21FA8C00BE334B /* CountdownViewModel.swift */; };
-		87229D1A2A2202A500BE334B /* LevelViewNavigationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87229D192A2202A500BE334B /* LevelViewNavigationButton.swift */; };
-		874A37D62A226C0800043EAE /* LevelModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 874A37D52A226C0800043EAE /* LevelModel.swift */; };
-		8777E6102A272F4000996AAF /* Provar sonidos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8777E60F2A272F4000996AAF /* Provar sonidos.swift */; };
-		8777E6202A27A81C00996AAF /* VistaPrincipal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8777E61F2A27A81C00996AAF /* VistaPrincipal.swift */; };
-		8777E6222A27A84300996AAF /* BotonNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8777E6212A27A84300996AAF /* BotonNavigation.swift */; };
-		8777E6242A27A86E00996AAF /* VistaDestino.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8777E6232A27A86E00996AAF /* VistaDestino.swift */; };
-		8777E6262A27A87B00996AAF /* ModeloDatos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8777E6252A27A87B00996AAF /* ModeloDatos.swift */; };
-		8777E6282A27A89E00996AAF /* ModeloVista.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8777E6272A27A89E00996AAF /* ModeloVista.swift */; };
+		87423AFD2A2BA0D400BDB423 /* LevelModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87423AFC2A2BA0D400BDB423 /* LevelModel.swift */; };
+		8777E6222A27A84300996AAF /* LevelButtonNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8777E6212A27A84300996AAF /* LevelButtonNavigation.swift */; };
+		8777E6242A27A86E00996AAF /* CountdownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8777E6232A27A86E00996AAF /* CountdownView.swift */; };
+		8777E6282A27A89E00996AAF /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8777E6272A27A89E00996AAF /* ViewModel.swift */; };
 		8781DEA72A22566700BA8142 /* Colores.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8781DEA62A22566700BA8142 /* Colores.swift */; };
 		8785F7F22A2496A7001069E9 /* CustomNavigationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8785F7F12A2496A7001069E9 /* CustomNavigationButton.swift */; };
 		878A57392A29E66400EB5328 /* Temporizador.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878A57382A29E66400EB5328 /* Temporizador.swift */; };
@@ -28,16 +22,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		87229D112A21F76E00BE334B /* CountdownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownView.swift; sourceTree = "<group>"; };
-		87229D152A21FA8C00BE334B /* CountdownViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownViewModel.swift; sourceTree = "<group>"; };
-		87229D192A2202A500BE334B /* LevelViewNavigationButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelViewNavigationButton.swift; sourceTree = "<group>"; };
-		874A37D52A226C0800043EAE /* LevelModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelModel.swift; sourceTree = "<group>"; };
-		8777E60F2A272F4000996AAF /* Provar sonidos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Provar sonidos.swift"; sourceTree = "<group>"; };
-		8777E61F2A27A81C00996AAF /* VistaPrincipal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VistaPrincipal.swift; sourceTree = "<group>"; };
-		8777E6212A27A84300996AAF /* BotonNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BotonNavigation.swift; sourceTree = "<group>"; };
-		8777E6232A27A86E00996AAF /* VistaDestino.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VistaDestino.swift; sourceTree = "<group>"; };
-		8777E6252A27A87B00996AAF /* ModeloDatos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModeloDatos.swift; sourceTree = "<group>"; };
-		8777E6272A27A89E00996AAF /* ModeloVista.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModeloVista.swift; sourceTree = "<group>"; };
+		87423AFC2A2BA0D400BDB423 /* LevelModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LevelModel.swift; sourceTree = "<group>"; };
+		8777E6212A27A84300996AAF /* LevelButtonNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelButtonNavigation.swift; sourceTree = "<group>"; };
+		8777E6232A27A86E00996AAF /* CountdownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownView.swift; sourceTree = "<group>"; };
+		8777E6272A27A89E00996AAF /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		8781DEA62A22566700BA8142 /* Colores.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colores.swift; sourceTree = "<group>"; };
 		8785F7F12A2496A7001069E9 /* CustomNavigationButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationButton.swift; sourceTree = "<group>"; };
 		878A57382A29E66400EB5328 /* Temporizador.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Temporizador.swift; sourceTree = "<group>"; };
@@ -63,12 +51,9 @@
 		87229D102A21F74E00BE334B /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				8777E61F2A27A81C00996AAF /* VistaPrincipal.swift */,
 				879C463C2A249E9300FFB344 /* LevelsView.swift */,
-				8777E6212A27A84300996AAF /* BotonNavigation.swift */,
-				87229D192A2202A500BE334B /* LevelViewNavigationButton.swift */,
-				8777E6232A27A86E00996AAF /* VistaDestino.swift */,
-				87229D112A21F76E00BE334B /* CountdownView.swift */,
+				8777E6212A27A84300996AAF /* LevelButtonNavigation.swift */,
+				8777E6232A27A86E00996AAF /* CountdownView.swift */,
 				874A37D72A22781900043EAE /* SEG */,
 			);
 			path = Views;
@@ -77,8 +62,7 @@
 		87229D132A21F79100BE334B /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				8777E6252A27A87B00996AAF /* ModeloDatos.swift */,
-				874A37D52A226C0800043EAE /* LevelModel.swift */,
+				87423AFC2A2BA0D400BDB423 /* LevelModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -86,8 +70,7 @@
 		87229D142A21F79600BE334B /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				87229D152A21FA8C00BE334B /* CountdownViewModel.swift */,
-				8777E6272A27A89E00996AAF /* ModeloVista.swift */,
+				8777E6272A27A89E00996AAF /* ViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -98,16 +81,8 @@
 				878A57382A29E66400EB5328 /* Temporizador.swift */,
 				879009F72A21E57400E70B8D /* ContentView.swift */,
 				8785F7F12A2496A7001069E9 /* CustomNavigationButton.swift */,
-				8777E60F2A272F4000996AAF /* Provar sonidos.swift */,
 			);
 			path = SEG;
-			sourceTree = "<group>";
-		};
-		8777E61E2A27A7D900996AAF /* Ejemplo */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Ejemplo;
 			sourceTree = "<group>";
 		};
 		8781DEA52A22565400BA8142 /* Utils */ = {
@@ -139,7 +114,6 @@
 			children = (
 				879009F52A21E57400E70B8D /* meditarApp.swift */,
 				8781DEA52A22565400BA8142 /* Utils */,
-				8777E61E2A27A7D900996AAF /* Ejemplo */,
 				87229D132A21F79100BE334B /* Model */,
 				87229D142A21F79600BE334B /* ViewModel */,
 				87229D102A21F74E00BE334B /* Views */,
@@ -228,20 +202,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				879C463D2A249E9300FFB344 /* LevelsView.swift in Sources */,
-				87229D162A21FA8C00BE334B /* CountdownViewModel.swift in Sources */,
-				87229D1A2A2202A500BE334B /* LevelViewNavigationButton.swift in Sources */,
-				87229D122A21F76E00BE334B /* CountdownView.swift in Sources */,
-				8777E6242A27A86E00996AAF /* VistaDestino.swift in Sources */,
+				8777E6242A27A86E00996AAF /* CountdownView.swift in Sources */,
 				879009F82A21E57400E70B8D /* ContentView.swift in Sources */,
-				8777E6262A27A87B00996AAF /* ModeloDatos.swift in Sources */,
 				8785F7F22A2496A7001069E9 /* CustomNavigationButton.swift in Sources */,
-				8777E6102A272F4000996AAF /* Provar sonidos.swift in Sources */,
-				8777E6202A27A81C00996AAF /* VistaPrincipal.swift in Sources */,
 				879009F62A21E57400E70B8D /* meditarApp.swift in Sources */,
-				874A37D62A226C0800043EAE /* LevelModel.swift in Sources */,
-				8777E6282A27A89E00996AAF /* ModeloVista.swift in Sources */,
+				8777E6282A27A89E00996AAF /* ViewModel.swift in Sources */,
 				878A57392A29E66400EB5328 /* Temporizador.swift in Sources */,
-				8777E6222A27A84300996AAF /* BotonNavigation.swift in Sources */,
+				87423AFD2A2BA0D400BDB423 /* LevelModel.swift in Sources */,
+				8777E6222A27A84300996AAF /* LevelButtonNavigation.swift in Sources */,
 				8781DEA72A22566700BA8142 /* Colores.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

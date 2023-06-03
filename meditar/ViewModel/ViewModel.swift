@@ -1,22 +1,24 @@
-//  CountdownViewModel.swift
+//  ModeloVista.swift
 //  meditar
-//  Created by Losark on 27/5/23.
+//  Created by Losark on 31/5/23.
 
 import SwiftUI
 import CoreHaptics
-import AudioToolbox // Sonidos del sistema
+import AudioToolbox //Sonidos del sistema
 //import AVFoundation //Para añadir un sonido
 
-class CountdownViewModel: ObservableObject {
-    @Published var currentNumber: Int
-    var timer: Timer?
+class ViewModel: ObservableObject {
+    @Published var principiante: LevelModel
+    @Published var intermedio: LevelModel
     var engine: CHHapticEngine?
     
-    private let startingNumber: Int
+    @Published var currentNumber: Int = 0
+    @State private var timer: Timer?
     
-    init(startingNumber: Int) {
-        self.startingNumber = startingNumber
-        currentNumber = startingNumber
+    init() {
+        principiante = LevelModel(nivel: "Principiante", color: Color.rojo, tiempo: 5)
+        intermedio = LevelModel(nivel: "Intermedio", color: Color.orange, tiempo: 10)
+        
         do {
             engine = try CHHapticEngine()
             try engine?.start()
@@ -24,8 +26,10 @@ class CountdownViewModel: ObservableObject {
             print("Error starting haptic engine: \(error)")
             //Si falla puede ser debido a una version de iphone inferior al 8
         }
+        
     }
     
+    //MARK: - Funciones
     func playVibration() {
         guard CHHapticEngine.capabilitiesForHardware().supportsHaptics else {
             return
@@ -40,31 +44,6 @@ class CountdownViewModel: ObservableObject {
         } catch {
             print("Error playing haptic feedback: \(error)")
         }
-    }
-    
-    func startCountdown() {
-        guard currentNumber > 0 else {
-            return
-        }
-        
-        //TODO: Pasar a minutos con segundos
-        timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { [weak self] _ in
-            guard let self = self else {
-                return
-            }
-            self.currentNumber -= 1
-            if self.currentNumber == 0 {
-                self.timer?.invalidate()
-                self.timer = nil
-                playSystemSound(soundID: 1030)
-            }
-        }
-    }
-    
-    func resetCountdown() {
-        timer?.invalidate()
-        timer = nil
-        currentNumber = startingNumber
     }
     
     func playSystemSound(soundID: SystemSoundID = 1104) {

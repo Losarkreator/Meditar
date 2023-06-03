@@ -1,32 +1,28 @@
-//  CountdownView.swift
+//  VistaDestino.swift
 //  meditar
-//  Created by Losark on 27/5/23.
+//  Created by Losark on 31/5/23.
 
 import SwiftUI
 
 struct CountdownView: View {
-    @StateObject private var viewModel: CountdownViewModel
-    @State private var savedInitialValue: Int
+    var modeloDeDatos: LevelModel
+    @StateObject private var viewModel = ViewModel()
     @State private var isCountdownRunning = false
-    
-    
-    init(startingNumber: Int) {
-        _viewModel = StateObject(wrappedValue: CountdownViewModel(startingNumber: startingNumber))
-        _savedInitialValue = State(initialValue: startingNumber)
-    }
+    @State private var currentNumber = 0
+    @State private var startingTime = 0
+    @State private var timer: Timer?
     
     var body: some View {
-        VStack {
+        VStack { //Fondo
             VStack { //Margenes
                 Spacer()
                 //MARK: - Titulo
-                Text("Nivel Principiante") //\()
+                Text("Nivel: \(modeloDeDatos.nivel)")
                     .font(.largeTitle)
                     .fontWeight(.black)
                     .foregroundColor(.blanco)
-//                    .padding(40.0)
                 //MARK: - Contador Numeros
-                Text("\(viewModel.currentNumber)' 23''")
+                Text("\(formatTime(seconds: currentNumber))")
                     .font(.largeTitle)
                     .fontWeight(.black)
                     .padding(.bottom, 40.0)
@@ -39,29 +35,29 @@ struct CountdownView: View {
                         .opacity(0.05)
                         .foregroundColor(.negro)
                         .frame(width: 300.0, height: 300.0)
+                    
                     Circle()
-                        .trim(from: 0, to: CGFloat(viewModel.currentNumber) / CGFloat(savedInitialValue))
+                        .trim(from: 0, to: CGFloat(currentNumber) / CGFloat(startingTime))
                         .stroke(Color.blanco, lineWidth: 40)
                         .rotationEffect(.degrees(-90))
                         .frame(width: 300, height: 300)
                         .animation(.easeInOut)
-                    
+
                     Image("MeditIcon")
                         .aspectRatio(contentMode: .fit)
-                    
                 }
                 
                 Spacer()
                 
                 //MARK: - BOTON
                 Button(action: {
-                    if isCountdownRunning {
-                        viewModel.resetCountdown()
-                        viewModel.playSystemSound(soundID: 1132)
+                    if !isCountdownRunning {
+                        startCountdown(with: currentNumber)
+                        viewModel.playSystemSound()
                         viewModel.playVibration()
                     } else {
-                        viewModel.startCountdown()
-                        viewModel.playSystemSound()
+                        resetCountdown()
+                        viewModel.playSystemSound(soundID: 1132)
                         viewModel.playVibration()
                     }
                     isCountdownRunning.toggle()
@@ -71,18 +67,50 @@ struct CountdownView: View {
                         .frame(width: 100.0, height: 100.0)
                         .foregroundColor(.blanco)
                 }
-            }
+                
+            } //Margenes
             .padding(.horizontal, 20.0)
             .padding(.bottom, 40.0)
-        }
+        } //Fondo
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(Color.amarillo)
+        .background(modeloDeDatos.color)
         .edgesIgnoringSafeArea(.all)
+        .onAppear {
+            startingTime = modeloDeDatos.tiempo * 60
+            currentNumber = startingTime
+        }
     }
+    
+    //MARK: - Funciones
+    func startCountdown(with minutos: Int) {
+        resetCountdown()
+        currentNumber = minutos
+        timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { _ in
+            currentNumber -= 1
+            // Llega a 0
+            if currentNumber == 0 {
+                timer?.invalidate()
+                viewModel.playSystemSound(soundID: 1030)
+            }
+        }
+    }
+    
+    func resetCountdown() {
+        currentNumber = startingTime
+        timer?.invalidate()
+    }
+    
+    func formatTime(seconds: Int) -> String {
+        let minutes = seconds / 60
+        let remainingSeconds = seconds % 60
+        return String(format: "%d:%02d", minutes, remainingSeconds)
+    }
+    
 }
 
-struct CountdownView_Previews: PreviewProvider {
+struct VistaDestino_Previews: PreviewProvider {
     static var previews: some View {
-        CountdownView(startingNumber: 2)
+        let modeloVista = ViewModel()
+        CountdownView(modeloDeDatos: modeloVista.principiante)
     }
 }

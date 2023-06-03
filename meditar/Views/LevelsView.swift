@@ -16,7 +16,7 @@ struct LevelsView: View {
         return mensaje
     }
     @State private var isDescriptionVisible = false
-    let modeloVista = ModeloVista()
+    let modeloVista = ViewModel()
     
     var body: some View {
         NavigationView {
@@ -37,9 +37,9 @@ struct LevelsView: View {
                     
                     //MARK: - Lista de niveles
                     VStack {
-                        BotonNavigation(modeloDeDatos: modeloVista.principiante, destination: VistaDestino(modeloDeDatos: modeloVista.principiante))
+                        LevelButtonNavigation(modeloDeDatos: modeloVista.principiante, destination: CountdownView(modeloDeDatos: modeloVista.principiante))
                         
-                        BotonNavigation(modeloDeDatos: modeloVista.intermedio, destination: VistaDestino(modeloDeDatos: modeloVista.intermedio))
+                        LevelButtonNavigation(modeloDeDatos: modeloVista.intermedio, destination: CountdownView(modeloDeDatos: modeloVista.intermedio))
                     }
                     
                     Spacer()

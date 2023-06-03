@@ -4,9 +4,9 @@
 
 import SwiftUI
 
-struct BotonNavigation: View {
-    var modeloDeDatos: ModeloDatos
-    var destination: VistaDestino
+struct LevelButtonNavigation: View {
+    var modeloDeDatos: LevelModel
+    var destination: CountdownView
     
     var body: some View {
         NavigationLink(destination: destination) {
@@ -34,8 +34,8 @@ struct BotonNavigation: View {
 struct BotonNavigation_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            let modeloVista = ModeloVista()
-            BotonNavigation(modeloDeDatos: modeloVista.intermedio, destination: VistaDestino(modeloDeDatos: modeloVista.intermedio))
+            let modeloVista = ViewModel()
+            LevelButtonNavigation(modeloDeDatos: modeloVista.intermedio, destination: CountdownView(modeloDeDatos: modeloVista.intermedio))
         }
     }
 }

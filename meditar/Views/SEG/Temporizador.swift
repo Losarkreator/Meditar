@@ -8,7 +8,7 @@ struct Temporizador: View {
     @State private var timer: Timer?
     @State private var currentNumber = 0
     @State private var startingTime = 0
-    var modeloDeDatos: ModeloDatos
+    var modeloDeDatos: LevelModel
     
     var body: some View {
         VStack{
@@ -67,7 +67,7 @@ struct Temporizador: View {
 
 struct Temporizador_Previews: PreviewProvider {
     static var previews: some View {
-        let modeloVista = ModeloVista()
+        let modeloVista = ViewModel()
         Temporizador(modeloDeDatos: modeloVista.principiante)
     }
 }

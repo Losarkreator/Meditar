@@ -10,6 +10,8 @@ import AudioToolbox //Sonidos del sistema
 class ViewModel: ObservableObject {
     @Published var principiante: LevelModel
     @Published var intermedio: LevelModel
+    @Published var experto: LevelModel
+    @Published var maestro: LevelModel
     var engine: CHHapticEngine?
     
     @Published var currentNumber: Int = 0
@@ -17,7 +19,9 @@ class ViewModel: ObservableObject {
     
     init() {
         principiante = LevelModel(nivel: "Principiante", color: Color.rojo, tiempo: 5)
-        intermedio = LevelModel(nivel: "Intermedio", color: Color.orange, tiempo: 10)
+        intermedio = LevelModel(nivel: "Intermedio", color: Color.naranja, tiempo: 15)
+        experto = LevelModel(nivel: "Experto", color: Color.amarillo, tiempo: 30)
+        maestro = LevelModel(nivel: "Maestro", color: Color.verde, tiempo: 60)
         
         do {
             engine = try CHHapticEngine()

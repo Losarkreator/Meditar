@@ -5,7 +5,7 @@
 import SwiftUI
 
 struct CountdownView: View {
-    var modeloDeDatos: LevelModel
+    var dataModel: LevelModel
     @StateObject private var viewModel = ViewModel()
     @State private var isCountdownRunning = false
     @State private var currentNumber = 0
@@ -17,7 +17,7 @@ struct CountdownView: View {
             VStack { //Margenes
                 Spacer()
                 //MARK: - Titulo
-                Text("Nivel: \(modeloDeDatos.nivel)")
+                Text("Nivel: \(dataModel.nivel)")
                     .font(.largeTitle)
                     .fontWeight(.black)
                     .foregroundColor(.blanco)
@@ -73,10 +73,10 @@ struct CountdownView: View {
             .padding(.bottom, 40.0)
         } //Fondo
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(modeloDeDatos.color)
+        .background(dataModel.color)
         .edgesIgnoringSafeArea(.all)
         .onAppear {
-            startingTime = modeloDeDatos.tiempo * 60
+            startingTime = dataModel.tiempo * 60
             currentNumber = startingTime
         }
     }
@@ -111,6 +111,6 @@ struct CountdownView: View {
 struct VistaDestino_Previews: PreviewProvider {
     static var previews: some View {
         let modeloVista = ViewModel()
-        CountdownView(modeloDeDatos: modeloVista.principiante)
+        CountdownView(dataModel: modeloVista.principiante)
     }
 }

@@ -5,6 +5,7 @@
 import SwiftUI
 
 struct LevelsView: View {
+    let viewModel = ViewModel()
     private func appDescription() -> String {
         let mensaje = """
     ¡Bienvenido a nuestra aplicación de meditación personalizada!
@@ -16,7 +17,6 @@ struct LevelsView: View {
         return mensaje
     }
     @State private var isDescriptionVisible = false
-    let modeloVista = ViewModel()
     
     var body: some View {
         NavigationView {
@@ -37,9 +37,17 @@ struct LevelsView: View {
                     
                     //MARK: - Lista de niveles
                     VStack {
-                        LevelButtonNavigation(modeloDeDatos: modeloVista.principiante, destination: CountdownView(modeloDeDatos: modeloVista.principiante))
+                        LevelButtonNavigation(dataModel: viewModel.principiante, destination: CountdownView(dataModel: viewModel.principiante))
                         
-                        LevelButtonNavigation(modeloDeDatos: modeloVista.intermedio, destination: CountdownView(modeloDeDatos: modeloVista.intermedio))
+                        LevelButtonNavigation(dataModel: viewModel.intermedio, destination: CountdownView(dataModel: viewModel.intermedio))
+                        
+                        LevelButtonNavigation(dataModel: viewModel.experto, destination: CountdownView(dataModel: viewModel.experto))
+                        
+                        LevelButtonNavigation(dataModel: viewModel.maestro, destination: CountdownView(dataModel: viewModel.maestro))
+                        
+                        //MARK: - Custom
+//                        LevelButtonNavigation(dataModel: LevelModel(nivel: "Custom", color: Color.azul, tiempo: 60), destination: CountdownView(dataModel: viewModel.maestro))
+                        
                     }
                     
                     Spacer()

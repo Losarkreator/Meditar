@@ -5,18 +5,18 @@
 import SwiftUI
 
 struct LevelButtonNavigation: View {
-    var modeloDeDatos: LevelModel
+    var dataModel: LevelModel
     var destination: CountdownView
     
     var body: some View {
         NavigationLink(destination: destination) {
             HStack {
                 Circle()
-                    .fill(modeloDeDatos.color)
+                    .fill(dataModel.color)
                     .padding(.trailing)
                     .frame(width: 40, height: 40)
                 
-                Text("\(modeloDeDatos.nivel): \(modeloDeDatos.tiempo) minutos")
+                Text("\(dataModel.nivel): \(dataModel.tiempo) minutos")
                     .font(.title3)
                     .fontWeight(.bold)
                     .foregroundColor(Color.black)
@@ -35,7 +35,7 @@ struct BotonNavigation_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
             let modeloVista = ViewModel()
-            LevelButtonNavigation(modeloDeDatos: modeloVista.intermedio, destination: CountdownView(modeloDeDatos: modeloVista.intermedio))
+            LevelButtonNavigation(dataModel: modeloVista.intermedio, destination: CountdownView(dataModel: modeloVista.intermedio))
         }
     }
 }

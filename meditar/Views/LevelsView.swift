@@ -59,12 +59,12 @@ struct LevelsView: View {
                             Button(action: {
                                 isDescriptionVisible = true
                             }) {
-                                Image(systemName: "chevron.down")
+                                Image(systemName: "chevron.up")
                                     .font(.system(size: 30, weight: .bold))
-                                    .foregroundColor(.morado)
+                                    .foregroundColor(.blanco)
                                     .frame(width: 60, height: 60)
                                     .background(
-                                        Circle().foregroundColor(.blanco.opacity(0.7))
+                                        Circle().foregroundColor(.morado)
                                             .shadow(color: .black.opacity(0.3), radius: 5, x: 0, y: 5)
                                     )
                                 
@@ -73,28 +73,30 @@ struct LevelsView: View {
                         }
                         //MARK: - Descripción
                     } else {
-                        ScrollView {
-                            Text(appDescription())
-                                .font(.body)
-                                .foregroundColor(Color.white)
-                                .padding(.leading)
-                                .padding(.top)
-                           
-                            Button(action: {
-                                isDescriptionVisible = false
-                                //TODO: hacer que se cierre cuando tocas en otro sitio
-                            }) {
-                                Image(systemName: "chevron.up")
-                                    .font(.system(size: 20, weight: .bold))
-                                    .foregroundColor(.black.opacity(0.2))
-                                    .frame(width: 40, height: 60)
-                                    .background(Circle().foregroundColor(.morado))
+                        VStack {
+                            ScrollView {
+                                Text(appDescription())
+                                    .font(.body)
+                                    .foregroundColor(Color.white)
+                                    .padding(.horizontal)
+                                    .padding(.top)
+                               
+                                Button(action: {
+                                    isDescriptionVisible = false
+                                    //TODO: hacer que se cierre cuando tocas en otro sitio
+                                }) {
+                                    Image(systemName: "chevron.down")
+                                        .font(.system(size: 20, weight: .bold))
+                                        .foregroundColor(.morado)
+                                        .frame(width: 40, height: 60)
+                                        .background(Circle().foregroundColor(.blanco))
+                                }
                             }
+                            .clipped() //Evita que el texto se desborde
+//                            .padding(4.0)
                         }
-                        .background(
-                            RoundedRectangle(cornerRadius: 20)
+                        .background(RoundedRectangle(cornerRadius: 20)
                                 .foregroundColor(.black.opacity(0.2)))
-                        .clipped() //Evita que el texto se desborde
                         .padding(.top, 20.0)
                     }
                     

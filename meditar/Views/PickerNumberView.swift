@@ -14,8 +14,9 @@ struct PickerNumberView: View {
     
     var body: some View {
         VStack {
-            Text("Cuanto tiempo?")
+            Text("¿Cuantos minutos vas a meditar?")
                 .font(.title)
+                .multilineTextAlignment(.center)
             
             Text("\(displayedNumber)")
                 .font(.largeTitle)
@@ -40,7 +41,7 @@ struct PickerNumberView: View {
                     .cornerRadius(10)
             }
         }
-        
+        .padding(.horizontal)
         
         
         

@@ -48,6 +48,9 @@ struct LevelsView: View {
                         //MARK: - Custom
 //                        CustomButtonNavigation(dataModel: LevelModel(nivel: "Personalizar", color: .azul, tiempo: 5), destination: CountdownView(dataModel: LevelModel(nivel: "Personalizado", color: .azul, tiempo: 5)))
                         
+                        CustomLevelView(dataModel: LevelModel(nivel: "Custom", color: .azul, tiempo: 60), destination: AnyView(PickerNumberView()))
+                        
+                        
                     }
                     
                     Spacer()

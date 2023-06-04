@@ -46,7 +46,7 @@ struct LevelsView: View {
                         LevelButtonNavigation(dataModel: viewModel.maestro, destination: CountdownView(dataModel: viewModel.maestro))
                         
                         //MARK: - Custom
-//                        LevelButtonNavigation(dataModel: LevelModel(nivel: "Custom", color: Color.azul, tiempo: 60), destination: CountdownView(dataModel: viewModel.maestro))
+//                        CustomButtonNavigation(dataModel: LevelModel(nivel: "Personalizar", color: .azul, tiempo: 5), destination: CountdownView(dataModel: LevelModel(nivel: "Personalizado", color: .azul, tiempo: 5)))
                         
                     }
                     
@@ -80,7 +80,7 @@ struct LevelsView: View {
                                     .foregroundColor(Color.white)
                                     .padding(.horizontal)
                                     .padding(.top)
-                               
+                                
                                 Button(action: {
                                     isDescriptionVisible = false
                                     //TODO: hacer que se cierre cuando tocas en otro sitio
@@ -93,15 +93,15 @@ struct LevelsView: View {
                                 }
                             }
                             .clipped() //Evita que el texto se desborde
-//                            .padding(4.0)
+                            //                            .padding(4.0)
                         }
                         .background(RoundedRectangle(cornerRadius: 20)
-                                .foregroundColor(.black.opacity(0.2)))
+                            .foregroundColor(.black.opacity(0.2)))
                         .padding(.top, 20.0)
                     }
                     
                 }
-                .padding(/*@START_MENU_TOKEN@*/.horizontal, 30.0/*@END_MENU_TOKEN@*/)
+                .padding(.horizontal, 30.0)
             }
             .navigationBarTitle("Niveles")
             .navigationBarHidden(true)

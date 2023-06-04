@@ -79,7 +79,7 @@ struct CountdownView: View {
         .background(dataModel.color)
         .edgesIgnoringSafeArea(.all)
         .onAppear {
-            startingTime = dataModel.tiempo //* 60
+            startingTime = dataModel.tiempo * 60
             currentNumber = startingTime
         }
     }

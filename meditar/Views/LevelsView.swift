@@ -33,7 +33,7 @@ struct LevelsView: View {
                         .foregroundColor(Color.white)
                         .padding(.top, 70.0)
                         .padding(.bottom, 60.0)
-                        .shadow(color: .black.opacity(0.3), radius: 5, x: 0, y: 5)
+                        .shadow(color: .black.opacity(0.3), radius: 3, x: 1, y: 3)
                     
                     //MARK: - Lista de niveles
                     VStack {
@@ -46,8 +46,6 @@ struct LevelsView: View {
                         LevelButtonNavigation(dataModel: viewModel.maestro, destination: CountdownView(dataModel: viewModel.maestro))
                         
                         //MARK: - Custom
-//                        CustomButtonNavigation(dataModel: LevelModel(nivel: "Personalizar", color: .azul, tiempo: 5), destination: CountdownView(dataModel: LevelModel(nivel: "Personalizado", color: .azul, tiempo: 5)))
-                        
                         CustomLevelView(dataModel: LevelModel(nivel: "Custom", color: .azul, tiempo: 60), destination: AnyView(PickerNumberView()))
                         
                         

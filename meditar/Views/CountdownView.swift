@@ -11,6 +11,7 @@ struct CountdownView: View {
     @State private var currentNumber = 0
     @State private var startingTime = 0
     @State private var timer: Timer?
+    @State private var desenfoque = false
     
     var body: some View {
         VStack { //Fondo
@@ -41,10 +42,11 @@ struct CountdownView: View {
                         .stroke(Color.blanco, lineWidth: 40)
                         .rotationEffect(.degrees(-90))
                         .frame(width: 300, height: 300)
-                        .animation(.easeInOut)
+                        .animation(.linear(duration: isCountdownRunning ? 1.0 : 0.2))
 
                     Image("MeditIcon")
                         .aspectRatio(contentMode: .fit)
+                        .blur(radius: desenfoque ? 5 : 0)
                 }
                 
                 Spacer()
@@ -61,6 +63,7 @@ struct CountdownView: View {
                         viewModel.playVibration()
                     }
                     isCountdownRunning.toggle()
+                    
                 }) {
                     Image(systemName: isCountdownRunning ? "stop.circle" : "play.circle")
                         .resizable()
@@ -76,7 +79,7 @@ struct CountdownView: View {
         .background(dataModel.color)
         .edgesIgnoringSafeArea(.all)
         .onAppear {
-            startingTime = dataModel.tiempo * 60
+            startingTime = dataModel.tiempo //* 60
             currentNumber = startingTime
         }
     }
@@ -87,6 +90,12 @@ struct CountdownView: View {
         currentNumber = minutos
         timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { _ in
             currentNumber -= 1
+            
+            //TODO: hacer que se desenfoque cada X segundos
+            withAnimation {
+                self.desenfoque.toggle()
+            }
+            
             // Llega a 0
             if currentNumber == 0 {
                 timer?.invalidate()

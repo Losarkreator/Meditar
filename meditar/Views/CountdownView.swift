@@ -119,6 +119,7 @@ struct CountdownView: View {
     }
 
     func animateBlur() {
+        self.desenfoque.toggle()
         timerBlur = Timer.scheduledTimer(withTimeInterval: duracionDesenfoque, repeats: true) { _ in
             self.desenfoque.toggle()
         }
@@ -126,7 +127,6 @@ struct CountdownView: View {
     
     func resetCountdown() {
         currentNumber = startingTime
-//        duracionDesenfoque = 0.0
         timer?.invalidate()
         timerBlur?.invalidate()
         self.desenfoque = false

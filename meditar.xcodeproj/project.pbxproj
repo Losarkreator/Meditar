@@ -21,6 +21,7 @@
 		879009FA2A21E57500E70B8D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 879009F92A21E57500E70B8D /* Assets.xcassets */; };
 		879009FD2A21E57500E70B8D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 879009FC2A21E57500E70B8D /* Preview Assets.xcassets */; };
 		879C463D2A249E9300FFB344 /* LevelsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 879C463C2A249E9300FFB344 /* LevelsView.swift */; };
+		87A3323B2A2DE8E300003CF3 /* AnimationTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A3323A2A2DE8E300003CF3 /* AnimationTypes.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,7 @@
 		879009F92A21E57500E70B8D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		879009FC2A21E57500E70B8D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		879C463C2A249E9300FFB344 /* LevelsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelsView.swift; sourceTree = "<group>"; };
+		87A3323A2A2DE8E300003CF3 /* AnimationTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationTypes.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,8 +87,9 @@
 			isa = PBXGroup;
 			children = (
 				878A57382A29E66400EB5328 /* Temporizador.swift */,
-				879009F72A21E57400E70B8D /* ContentView.swift */,
 				8785F7F12A2496A7001069E9 /* CustomNavigationButton.swift */,
+				879009F72A21E57400E70B8D /* ContentView.swift */,
+				87A3323A2A2DE8E300003CF3 /* AnimationTypes.swift */,
 			);
 			path = SEG;
 			sourceTree = "<group>";
@@ -209,6 +212,7 @@
 			files = (
 				879C463D2A249E9300FFB344 /* LevelsView.swift in Sources */,
 				8777E6242A27A86E00996AAF /* CountdownView.swift in Sources */,
+				87A3323B2A2DE8E300003CF3 /* AnimationTypes.swift in Sources */,
 				8721B3A42A2CDBAE006DC08A /* CustomLevelView.swift in Sources */,
 				879009F82A21E57400E70B8D /* ContentView.swift in Sources */,
 				8785F7F22A2496A7001069E9 /* CustomNavigationButton.swift in Sources */,

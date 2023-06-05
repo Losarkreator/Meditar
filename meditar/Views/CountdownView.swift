@@ -15,87 +15,96 @@ struct CountdownView: View {
     @State private var desenfoque = false
     @State private var duracionDesenfoque: Double = 5.0
     
-    
     var body: some View {
-        VStack { //Fondo
+        ZStack { //Fondo
+            dataModel.color
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                .edgesIgnoringSafeArea(.all)
+            
             VStack { //Margenes
-                //MARK: - Titulo
-                Text("Nivel: \(dataModel.nivel)")
-                    .font(.largeTitle)
-                    .fontWeight(.black)
+                
+                // Titulo + Circulo
+                VStack {
+                    //MARK: - Titulo
+                    Text("\(dataModel.nivel)")
+                        .font(.largeTitle)
+                        .fontWeight(.black)
                     .foregroundColor(.blanco)
                 //MARK: - Contador Numeros
                 Text("\(formatTime(seconds: currentNumber))")
                     .font(.largeTitle)
                     .fontWeight(.black)
-                    .padding(.bottom, 40.0)
+//                    .padding(.bottom, 40.0)
                     .foregroundColor(.blanco)
                 
-                //MARK: - CuentAtras Circulo
-                ZStack {
-                    Circle()
-                        .stroke(lineWidth: 40)
-                        .opacity(0.05)
-                        .foregroundColor(.negro)
-                        .frame(width: 300.0, height: 300.0)
-                    
-                    Circle()
-                        .trim(from: 0, to: CGFloat(currentNumber) / CGFloat(startingTime))
-                        .stroke(Color.blanco, lineWidth: 40)
-                        .rotationEffect(.degrees(-90))
-                        .frame(width: 300, height: 300)
-                        .animation(.linear(duration: isCountdownRunning ? 1.0 : 0.2))
-                    
-                    Image("MeditIcon")
+                    //MARK: - CuentAtras Circulo
+                    ZStack {
+                        Circle()
+                            .stroke(lineWidth: 40)
+                            .opacity(0.05)
+                            .foregroundColor(.negro)
+                            .frame(width: 300.0, height: 300.0)
+                        
+                        Circle()
+                            .trim(from: 0, to: CGFloat(currentNumber) / CGFloat(startingTime))
+                            .stroke(Color.blanco, lineWidth: 40)
+                            .rotationEffect(.degrees(-90))
+                            .frame(width: 300, height: 300)
+                            .animation(.linear(duration: isCountdownRunning ? 1.0 : 0.2))
+                        
+                        Image("MeditIcon")
                             .aspectRatio(contentMode: .fit)
                             .blur(radius: desenfoque ? 5 : 0)
                             .animation(Animation.easeInOut(duration: isCountdownRunning ? duracionDesenfoque : 0))
+                    }
                 }
                 
                 Spacer()
-                if currentNumber == 0 {
-                    Text("¡Enhorabuena!")
-                        .font(.largeTitle)
-                        .fontWeight(.black)
-                        .foregroundColor(.blanco)
-                        .padding(.bottom, 1)
-                    Text("Has completado la meditación")
-                        .font(.title2)
-                        .foregroundColor(.blanco)
-                }
                 
-                
-                //MARK: - BOTON
-                Button(action: {
-                    if !isCountdownRunning {
-                        startCountdown(with: currentNumber)
-                        viewModel.playSystemSound()
-                        viewModel.playVibration()
-                    } else {
-                        resetCountdown()
-                        viewModel.playSystemSound(soundID: 1132)
-                        viewModel.playVibration()
+                //Boton + Mensaje
+                VStack{
+                    if currentNumber <= 0 {
+                        VStack {
+                            Spacer()
+                            Text("¡Enhorabuena!")
+                                .font(.largeTitle)
+                                .fontWeight(.black)
+                                .foregroundColor(.blanco)
+                            Text("Has completado la meditación")
+                                .font(.title2)
+                                .foregroundColor(.blanco)
+                        }
                     }
-                    isCountdownRunning.toggle()
                     
-                }) {
-                    Image(systemName: isCountdownRunning ? "stop.circle" : "play.circle")
-                        .resizable()
-                        .frame(width: 100.0, height: 100.0)
-                        .foregroundColor(.blanco)
+                    Spacer()
+                    
+                    //MARK: - BOTON
+                    Button(action: {
+                        if !isCountdownRunning {
+                            startCountdown(with: currentNumber)
+                            viewModel.playSystemSound()
+                            viewModel.playVibration()
+                        } else {
+                            resetCountdown()
+                            viewModel.playSystemSound(soundID: 1132)
+                            viewModel.playVibration()
+                        }
+                        isCountdownRunning.toggle()
+                        
+                    }) {
+                        Image(systemName: isCountdownRunning ? "stop.circle" : "play.circle")
+                            .resizable()
+                            .frame(width: 100.0, height: 100.0)
+                            .foregroundColor(.blanco)
+                    }
+//                    .background(Color.morado)
                 }
                 
             } //Margenes
             .padding(.horizontal, 20.0)
-//            .background(Color.amarillo)
-            .padding(.bottom, 40.0)
-            .padding(.top, 80.0)
         } //Fondo
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(dataModel.color)
-        .edgesIgnoringSafeArea(.all)
         .onAppear {
-            startingTime = dataModel.tiempo //* 60
+            startingTime = dataModel.tiempo * 60
             currentNumber = startingTime
         }
     }

@@ -19,7 +19,6 @@ struct CountdownView: View {
     var body: some View {
         VStack { //Fondo
             VStack { //Margenes
-                Spacer()
                 //MARK: - Titulo
                 Text("Nivel: \(dataModel.nivel)")
                     .font(.largeTitle)
@@ -88,13 +87,15 @@ struct CountdownView: View {
                 
             } //Margenes
             .padding(.horizontal, 20.0)
+//            .background(Color.amarillo)
             .padding(.bottom, 40.0)
+            .padding(.top, 80.0)
         } //Fondo
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(dataModel.color)
         .edgesIgnoringSafeArea(.all)
         .onAppear {
-            startingTime = dataModel.tiempo * 60
+            startingTime = dataModel.tiempo //* 60
             currentNumber = startingTime
         }
     }

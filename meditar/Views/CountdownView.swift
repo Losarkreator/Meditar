@@ -11,7 +11,10 @@ struct CountdownView: View {
     @State private var currentNumber = 0
     @State private var startingTime = 0
     @State private var timer: Timer?
+    @State private var timerBlur: Timer?
     @State private var desenfoque = false
+    @State private var duracionDesenfoque: Double = 5.0
+    
     
     var body: some View {
         VStack { //Fondo
@@ -43,13 +46,25 @@ struct CountdownView: View {
                         .rotationEffect(.degrees(-90))
                         .frame(width: 300, height: 300)
                         .animation(.linear(duration: isCountdownRunning ? 1.0 : 0.2))
-
+                    
                     Image("MeditIcon")
-                        .aspectRatio(contentMode: .fit)
-                        .blur(radius: desenfoque ? 5 : 0)
+                            .aspectRatio(contentMode: .fit)
+                            .blur(radius: desenfoque ? 5 : 0)
+                            .animation(Animation.easeInOut(duration: isCountdownRunning ? duracionDesenfoque : 0))
                 }
                 
                 Spacer()
+                if currentNumber == 0 {
+                    Text("¡Enhorabuena!")
+                        .font(.largeTitle)
+                        .fontWeight(.black)
+                        .foregroundColor(.blanco)
+                        .padding(.bottom, 1)
+                    Text("Has completado la meditación")
+                        .font(.title2)
+                        .foregroundColor(.blanco)
+                }
+                
                 
                 //MARK: - BOTON
                 Button(action: {
@@ -87,26 +102,33 @@ struct CountdownView: View {
     //MARK: - Funciones
     func startCountdown(with minutos: Int) {
         resetCountdown()
+        animateBlur()
         currentNumber = minutos
         timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { _ in
             currentNumber -= 1
-            
-            //TODO: hacer que se desenfoque cada X segundos
-            withAnimation {
-                self.desenfoque.toggle()
-            }
-            
+
             // Llega a 0
             if currentNumber == 0 {
+                self.desenfoque = false
                 timer?.invalidate()
+                timerBlur?.invalidate()
                 viewModel.playSystemSound(soundID: 1030)
             }
+        }
+    }
+
+    func animateBlur() {
+        timerBlur = Timer.scheduledTimer(withTimeInterval: duracionDesenfoque, repeats: true) { _ in
+            self.desenfoque.toggle()
         }
     }
     
     func resetCountdown() {
         currentNumber = startingTime
+//        duracionDesenfoque = 0.0
         timer?.invalidate()
+        timerBlur?.invalidate()
+        self.desenfoque = false
     }
     
     func formatTime(seconds: Int) -> String {

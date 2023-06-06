@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		8721B3A22A2CD8E4006DC08A /* PickerNumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8721B3A12A2CD8E4006DC08A /* PickerNumberView.swift */; };
 		8721B3A42A2CDBAE006DC08A /* CustomLevelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8721B3A32A2CDBAE006DC08A /* CustomLevelView.swift */; };
+		87377E9D2A2F2A7200B6A3F7 /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87377E9C2A2F2A7200B6A3F7 /* SplashScreenView.swift */; };
 		87423AFD2A2BA0D400BDB423 /* LevelModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87423AFC2A2BA0D400BDB423 /* LevelModel.swift */; };
 		8777E6222A27A84300996AAF /* LevelButtonNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8777E6212A27A84300996AAF /* LevelButtonNavigation.swift */; };
 		8777E6242A27A86E00996AAF /* CountdownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8777E6232A27A86E00996AAF /* CountdownView.swift */; };
@@ -27,6 +28,7 @@
 /* Begin PBXFileReference section */
 		8721B3A12A2CD8E4006DC08A /* PickerNumberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerNumberView.swift; sourceTree = "<group>"; };
 		8721B3A32A2CDBAE006DC08A /* CustomLevelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLevelView.swift; sourceTree = "<group>"; };
+		87377E9C2A2F2A7200B6A3F7 /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
 		87423AFC2A2BA0D400BDB423 /* LevelModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LevelModel.swift; sourceTree = "<group>"; };
 		8777E6212A27A84300996AAF /* LevelButtonNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelButtonNavigation.swift; sourceTree = "<group>"; };
 		8777E6232A27A86E00996AAF /* CountdownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownView.swift; sourceTree = "<group>"; };
@@ -62,6 +64,7 @@
 				8777E6212A27A84300996AAF /* LevelButtonNavigation.swift */,
 				8721B3A12A2CD8E4006DC08A /* PickerNumberView.swift */,
 				8721B3A32A2CDBAE006DC08A /* CustomLevelView.swift */,
+				87377E9C2A2F2A7200B6A3F7 /* SplashScreenView.swift */,
 				874A37D72A22781900043EAE /* SEG */,
 			);
 			path = Views;
@@ -217,6 +220,7 @@
 				879009F82A21E57400E70B8D /* ContentView.swift in Sources */,
 				8785F7F22A2496A7001069E9 /* CustomNavigationButton.swift in Sources */,
 				879009F62A21E57400E70B8D /* meditarApp.swift in Sources */,
+				87377E9D2A2F2A7200B6A3F7 /* SplashScreenView.swift in Sources */,
 				8777E6282A27A89E00996AAF /* ViewModel.swift in Sources */,
 				8721B3A22A2CD8E4006DC08A /* PickerNumberView.swift in Sources */,
 				878A57392A29E66400EB5328 /* Temporizador.swift in Sources */,

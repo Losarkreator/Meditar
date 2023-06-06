@@ -8,7 +8,8 @@ import SwiftUI
 struct meditarApp: App {
     var body: some Scene {
         WindowGroup {
-            LevelsView()
+//            LevelsView()
+            SplashScreenView()
         }
     }
 }

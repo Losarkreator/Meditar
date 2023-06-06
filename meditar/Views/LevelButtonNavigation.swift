@@ -23,7 +23,7 @@ struct LevelButtonNavigation: View {
                 
                 Spacer()
                 
-                Text("\(dataModel.tiempo)''")
+                Text("\(dataModel.tiempo)'")
                     .font(.title3)
                     .fontWeight(.bold)
                     .foregroundColor(Color.black)

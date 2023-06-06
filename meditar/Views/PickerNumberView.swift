@@ -30,17 +30,12 @@ struct PickerNumberView: View {
                         Text("\(number)")
                             .font(.system(size: 30))
                             .fontWeight(.heavy)
+                            .foregroundColor(.blanco)
                     }
                 }
                 .pickerStyle(WheelPickerStyle())
-                .colorInvert()
                 
                 Spacer()
-                
-                //MARK: - Numero
-                //                    Text("\(selectedNumber)")
-                //                        .font(.largeTitle)
-                //                        .foregroundColor(.blanco)
                 
                 //MARK: - NavigationLink
                 NavigationButton(selectedNumber: selectedNumber)

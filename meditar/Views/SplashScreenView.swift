@@ -19,7 +19,6 @@ struct SplashScreenView: View {
         } else {
             ZStack {
                 Color.morado.ignoresSafeArea()
-                
                 VStack {
                     // Logo y texto
                     VStack {
@@ -33,13 +32,13 @@ struct SplashScreenView: View {
                     .opacity(opacity)
                     .onAppear {
                         withAnimation(.easeIn(duration: 1.2)){
-                            self.size = 0.9
+                            self.size = 1.3
                             self.opacity = 1.0
                         }
                     }
                 }
                 .onAppear {
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 2.0){
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 1.0){
                         self.isActive = true
                     }
                 }

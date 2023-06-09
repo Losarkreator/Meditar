@@ -102,7 +102,7 @@ struct CountdownView: View {
             .padding(.horizontal, 20.0)
         } //Fondo
         .onAppear {
-            startingTime = dataModel.tiempo * 60
+            startingTime = dataModel.tiempo //* 60
             currentNumber = startingTime
         }
     }

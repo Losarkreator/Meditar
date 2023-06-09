@@ -22,6 +22,7 @@
 		879009FA2A21E57500E70B8D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 879009F92A21E57500E70B8D /* Assets.xcassets */; };
 		879009FD2A21E57500E70B8D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 879009FC2A21E57500E70B8D /* Preview Assets.xcassets */; };
 		879C463D2A249E9300FFB344 /* LevelsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 879C463C2A249E9300FFB344 /* LevelsView.swift */; };
+		87A2FAED2A333387005553CF /* TemporizadorBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A2FAEC2A333387005553CF /* TemporizadorBackground.swift */; };
 		87A3323B2A2DE8E300003CF3 /* AnimationTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A3323A2A2DE8E300003CF3 /* AnimationTypes.swift */; };
 /* End PBXBuildFile section */
 
@@ -42,6 +43,7 @@
 		879009F92A21E57500E70B8D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		879009FC2A21E57500E70B8D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		879C463C2A249E9300FFB344 /* LevelsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelsView.swift; sourceTree = "<group>"; };
+		87A2FAEC2A333387005553CF /* TemporizadorBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemporizadorBackground.swift; sourceTree = "<group>"; };
 		87A3323A2A2DE8E300003CF3 /* AnimationTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationTypes.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -90,6 +92,7 @@
 			isa = PBXGroup;
 			children = (
 				878A57382A29E66400EB5328 /* Temporizador.swift */,
+				87A2FAEC2A333387005553CF /* TemporizadorBackground.swift */,
 				8785F7F12A2496A7001069E9 /* CustomNavigationButton.swift */,
 				879009F72A21E57400E70B8D /* ContentView.swift */,
 				87A3323A2A2DE8E300003CF3 /* AnimationTypes.swift */,
@@ -223,6 +226,7 @@
 				87377E9D2A2F2A7200B6A3F7 /* SplashScreenView.swift in Sources */,
 				8777E6282A27A89E00996AAF /* ViewModel.swift in Sources */,
 				8721B3A22A2CD8E4006DC08A /* PickerNumberView.swift in Sources */,
+				87A2FAED2A333387005553CF /* TemporizadorBackground.swift in Sources */,
 				878A57392A29E66400EB5328 /* Temporizador.swift in Sources */,
 				87423AFD2A2BA0D400BDB423 /* LevelModel.swift in Sources */,
 				8777E6222A27A84300996AAF /* LevelButtonNavigation.swift in Sources */,

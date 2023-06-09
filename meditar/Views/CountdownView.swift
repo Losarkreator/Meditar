@@ -34,7 +34,6 @@ struct CountdownView: View {
                 Text("\(formatTime(seconds: currentNumber))")
                     .font(.largeTitle)
                     .fontWeight(.black)
-//                    .padding(.bottom, 40.0)
                     .foregroundColor(.blanco)
                 
                     //MARK: - CuentAtras Circulo
@@ -47,7 +46,7 @@ struct CountdownView: View {
                         
                         Circle()
                             .trim(from: 0, to: CGFloat(currentNumber) / CGFloat(startingTime))
-                            .stroke(Color.blanco, lineWidth: 40)
+                            .stroke(Color.blanco, style: StrokeStyle(lineWidth: 40,lineCap: .round))
                             .rotationEffect(.degrees(-90))
                             .frame(width: 300, height: 300)
                             .animation(.linear(duration: isCountdownRunning ? 1.0 : 0.2))
@@ -97,7 +96,6 @@ struct CountdownView: View {
                             .frame(width: 100.0, height: 100.0)
                             .foregroundColor(.blanco)
                     }
-//                    .background(Color.morado)
                 }
                 
             } //Margenes

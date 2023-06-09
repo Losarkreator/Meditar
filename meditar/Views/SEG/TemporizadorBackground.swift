@@ -9,6 +9,7 @@ struct TemporizadorBackground: View {
     @State var to : CGFloat = 0
     @State var count = 0
     @State var time = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
+    @State var totalTime = 5
     
     var body: some View{
         ZStack{
@@ -36,7 +37,7 @@ struct TemporizadorBackground: View {
                             .font(.system(size: 65))
                             .fontWeight(.bold)
                         
-                        Text("Of 10")
+                        Text("Of \(totalTime)")
                             .font(.title)
                             .padding(.top)
                     }
@@ -46,7 +47,7 @@ struct TemporizadorBackground: View {
                 HStack(spacing: 20){
                     // Play y Pause
                     Button(action: {
-                        if self.count == 10{
+                        if self.count == totalTime{
                             self.count = 0
                             withAnimation(.default){
                                 self.to = 0
@@ -100,11 +101,11 @@ struct TemporizadorBackground: View {
         })
         .onReceive(self.time) { (_) in
             if self.start{
-                if self.count != 10 {
+                if self.count != totalTime {
                     self.count += 1
                     print("hello")
                     withAnimation(.default){
-                        self.to = CGFloat(self.count) / 10
+                        self.to = CGFloat(self.count) / CGFloat(totalTime)
                     }
                 } else {
                     self.start.toggle()

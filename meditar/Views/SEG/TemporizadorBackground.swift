@@ -103,7 +103,7 @@ struct TemporizadorBackground: View {
             if self.start{
                 if self.count != totalTime {
                     self.count += 1
-                    print("hello")
+                    print("Cuenta: \(count)")
                     withAnimation(.default){
                         self.to = CGFloat(self.count) / CGFloat(totalTime)
                     }

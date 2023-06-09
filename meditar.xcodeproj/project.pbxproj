@@ -44,6 +44,7 @@
 		879009FC2A21E57500E70B8D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		879C463C2A249E9300FFB344 /* LevelsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelsView.swift; sourceTree = "<group>"; };
 		87A2FAEC2A333387005553CF /* TemporizadorBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemporizadorBackground.swift; sourceTree = "<group>"; };
+		87A2FAEE2A333A32005553CF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		87A3323A2A2DE8E300003CF3 /* AnimationTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationTypes.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -127,6 +128,7 @@
 		879009F42A21E57400E70B8D /* meditar */ = {
 			isa = PBXGroup;
 			children = (
+				87A2FAEE2A333A32005553CF /* Info.plist */,
 				879009F52A21E57400E70B8D /* meditarApp.swift */,
 				8781DEA52A22565400BA8142 /* Utils */,
 				87229D132A21F79100BE334B /* Model */,
@@ -362,6 +364,7 @@
 				DEVELOPMENT_TEAM = MGTA3MZZG3;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = meditar/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -392,6 +395,7 @@
 				DEVELOPMENT_TEAM = MGTA3MZZG3;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = meditar/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

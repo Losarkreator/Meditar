@@ -7,47 +7,64 @@ import SwiftUI
 struct TemporizadorBackground: View {
     @State var start = false
     @State var to : CGFloat = 0
-    @State var count = 0
+    @State var count = 5
     @State var time = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     @State var totalTime = 5
     
     var body: some View{
-        ZStack{
+        
+        ZStack {
             //MARK: - Fondo
-            Color.black.opacity(0.06).edgesIgnoringSafeArea(.all)
+            Color.amarillo.edgesIgnoringSafeArea(.all)
             
-            VStack{
-                ZStack{
+            //MARK: - Top
+            VStack {
+                //MARK: - Textos
+                VStack {
+                    Text("Nivel")
+                        .font(.system(size: 65))
+                        .fontWeight(.bold)
+                    Text("00:00 Count: \(count)")
+                        .font(.title)
+                }
+                .padding(.bottom, 50.0)
+                
+                ZStack {
                     //MARK: - Circulos
-                    Circle()
-                        .trim(from: 0, to: 1)
-                        .stroke(Color.black.opacity(0.09), style: StrokeStyle(lineWidth: 35, lineCap: .round))
-                        .frame(width: 280, height: 280)
+                    Group {
+                        Circle()
+                            .stroke(Color.blanco.opacity(0.3), style: StrokeStyle(lineWidth: 35, lineCap: .round))
                     
                     Circle()
                         .trim(from: 0, to: self.to)
-                        .stroke(Color.red, style: StrokeStyle(lineWidth: 35, lineCap: .round))
-                        .frame(width: 280, height: 280)
+                        .stroke(Color.blanco, style: StrokeStyle(lineWidth: 35, lineCap: .round))
                         .rotationEffect(.init(degrees: -90))
+                    }
                     
-                    
-                    //MARK: - Textos
-                    VStack{
-                        Text("\(self.count)")
-                            .font(.system(size: 65))
-                            .fontWeight(.bold)
+                    //MARK: - Boton
+                    Button(action: {
+                        start.toggle()
                         
-                        Text("Of \(totalTime)")
-                            .font(.title)
-                            .padding(.top)
+                        if !start {
+                            count = totalTime
+                        }
+                        
+                        
+                    }) {
+                        Image(systemName: self.start ? "stop.fill" : "play.fill")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                        .padding(90.0)
                     }
                 }
+                .frame(width: 280, height: 280)
                 
                 //MARK: - Botones
+                /*
                 HStack(spacing: 20){
                     // Play y Pause
                     Button(action: {
-                        if self.count == totalTime{
+                        if self.count == totalTime {
                             self.count = 0
                             withAnimation(.default){
                                 self.to = 0
@@ -92,7 +109,9 @@ struct TemporizadorBackground: View {
                     }
                 }
                 .padding(.top, 55)
+                 */
             }
+            .foregroundColor(.blanco)
             
         }
         .onAppear(perform: {
@@ -100,17 +119,33 @@ struct TemporizadorBackground: View {
             }
         })
         .onReceive(self.time) { (_) in
-            if self.start{
-                if self.count != totalTime {
-                    self.count += 1
-                    print("Cuenta: \(count)")
+            // Si ha empezado:
+            if self.start {
+//                currentNumber = minutos
+                count = totalTime
+                
+                
+                if self.count > 0 {
+                    self.count -= 1
                     withAnimation(.default){
                         self.to = CGFloat(self.count) / CGFloat(totalTime)
                     }
                 } else {
-                    self.start.toggle()
-                    self.Notify()
+//                    self.start.toggle()
                 }
+                
+//                if self.count != totalTime {
+//                    self.count += 1
+//                    print("Cuenta: \(count)")
+//                    withAnimation(.default){
+//                        self.to = CGFloat(self.count) / CGFloat(totalTime)
+//                    }
+//                } else {
+//                    self.start.toggle()
+//                    self.Notify()
+//                }
+                
+                
             }
         }
         

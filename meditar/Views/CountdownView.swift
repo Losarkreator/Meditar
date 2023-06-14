@@ -14,6 +14,7 @@ struct CountdownView: View {
     @State private var timerBlur: Timer?
     @State private var desenfoque = false
     @State private var duracionDesenfoque: Double = 5.0
+    @State private var showAlert = false
     
     var body: some View {
         ZStack { //Fondo
@@ -79,30 +80,17 @@ struct CountdownView: View {
                     .blur(radius: desenfoque ? 5 : 0)
                     .animation(Animation.easeInOut(duration: isCountdownRunning ? duracionDesenfoque : 0))
                 }
-                .frame(width: UIScreen.main.bounds.size.width / 1.5, height: UIScreen.main.bounds.size.width / 1.5)
+                .frame(height: UIScreen.main.bounds.size.width / 1.8)
 //                .background(Color.morado)
-                
-//                Spacer()
-                
-                
-                //MARK: - Alert
-                if currentNumber <= 0 {
-                    VStack {
-                        Spacer()
-                        Text("¡Enhorabuena!")
-                            .font(.largeTitle)
-                            .fontWeight(.black)
-                            .foregroundColor(.blanco)
-                        Text("Has completado la meditación")
-                            .font(.title2)
-                            .foregroundColor(.blanco)
-                    }
-                }
                 
             } //Margenes
 //            .background(.black.opacity(0.2))
             .padding(.horizontal, 20.0)
-            .padding(.vertical, 20.0)
+            .alert(isPresented: $showAlert) {
+                Alert(title: Text("¡Enhorabuena!"),
+                      message: Text("Has completado la meditación"),
+                      dismissButton: .default(Text("Aceptar")))
+            }
         } //Fondo
         //MARK: - Cuando Aparece
         .onAppear {
@@ -125,6 +113,7 @@ struct CountdownView: View {
                 timer?.invalidate()
                 timerBlur?.invalidate()
                 viewModel.playSystemSound(soundID: 1030)
+                showAlert = true
             }
         }
     }

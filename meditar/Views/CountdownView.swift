@@ -22,62 +22,33 @@ struct CountdownView: View {
                 .edgesIgnoringSafeArea(.all)
             
             VStack { //Margenes
-                
-                // Titulo + Circulo
+                //MARK: - Cabecera
                 VStack {
-                    //MARK: - Titulo
                     Text("\(dataModel.nivel)")
-                        .font(.largeTitle)
-                        .fontWeight(.black)
-                    .foregroundColor(.blanco)
-                //MARK: - Contador Numeros
-                Text("\(formatTime(seconds: currentNumber))")
-                    .font(.largeTitle)
-                    .fontWeight(.black)
-                    .foregroundColor(.blanco)
+                    Text("\(formatTime(seconds: currentNumber))")
+                }
+                .font(.largeTitle)
+                .fontWeight(.black)
+                .foregroundColor(.blanco)
+                .padding(.bottom, 40.0)
                 
-                    //MARK: - CuentAtras Circulo
-                    ZStack {
+                // Circulos //Boton
+                ZStack {
+                    //MARK: - Circulos
+                    Group {
                         Circle()
                             .stroke(lineWidth: 40)
                             .opacity(0.05)
                             .foregroundColor(.negro)
-                            .frame(width: 300.0, height: 300.0)
                         
                         Circle()
                             .trim(from: 0, to: CGFloat(currentNumber) / CGFloat(startingTime))
                             .stroke(Color.blanco, style: StrokeStyle(lineWidth: 40,lineCap: .round))
                             .rotationEffect(.degrees(-90))
-                            .frame(width: 300, height: 300)
                             .animation(.linear(duration: isCountdownRunning ? 1.0 : 0.2))
-                        
-                        Image("MeditIcon")
-                            .aspectRatio(contentMode: .fit)
-                            .blur(radius: desenfoque ? 5 : 0)
-                            .animation(Animation.easeInOut(duration: isCountdownRunning ? duracionDesenfoque : 0))
-                    }
-                }
-                
-                Spacer()
-                
-                //Boton + Mensaje
-                VStack{
-                    if currentNumber <= 0 {
-                        VStack {
-                            Spacer()
-                            Text("¡Enhorabuena!")
-                                .font(.largeTitle)
-                                .fontWeight(.black)
-                                .foregroundColor(.blanco)
-                            Text("Has completado la meditación")
-                                .font(.title2)
-                                .foregroundColor(.blanco)
-                        }
                     }
                     
-                    Spacer()
-                    
-                    //MARK: - BOTON
+                    //MARK: - Boton
                     Button(action: {
                         if !isCountdownRunning {
                             startCountdown(with: currentNumber)
@@ -91,16 +62,49 @@ struct CountdownView: View {
                         isCountdownRunning.toggle()
                         
                     }) {
-                        Image(systemName: isCountdownRunning ? "stop.circle" : "play.circle")
-                            .resizable()
-                            .frame(width: 100.0, height: 100.0)
+                        Image(systemName: isCountdownRunning ? "stop.fill" : "play.fill")
+                            .foregroundColor(.blanco)
+                            .font(.system(size: UIScreen.main.bounds.size.width / 3))
+                    }
+                }
+                .padding(.horizontal, 50.0)
+                
+                Spacer()
+                
+                //MARK: - Imagen
+                Group {
+                    Image("MeditIcon")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                    .blur(radius: desenfoque ? 5 : 0)
+                    .animation(Animation.easeInOut(duration: isCountdownRunning ? duracionDesenfoque : 0))
+                }
+                .frame(width: UIScreen.main.bounds.size.width / 1.5, height: UIScreen.main.bounds.size.width / 1.5)
+//                .background(Color.morado)
+                
+//                Spacer()
+                
+                
+                //MARK: - Alert
+                if currentNumber <= 0 {
+                    VStack {
+                        Spacer()
+                        Text("¡Enhorabuena!")
+                            .font(.largeTitle)
+                            .fontWeight(.black)
+                            .foregroundColor(.blanco)
+                        Text("Has completado la meditación")
+                            .font(.title2)
                             .foregroundColor(.blanco)
                     }
                 }
                 
             } //Margenes
+//            .background(.black.opacity(0.2))
             .padding(.horizontal, 20.0)
+            .padding(.vertical, 20.0)
         } //Fondo
+        //MARK: - Cuando Aparece
         .onAppear {
             startingTime = dataModel.tiempo * 60
             currentNumber = startingTime
@@ -114,7 +118,7 @@ struct CountdownView: View {
         currentNumber = minutos
         timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { _ in
             currentNumber -= 1
-
+            
             // Llega a 0
             if currentNumber == 0 {
                 self.desenfoque = false
@@ -124,7 +128,7 @@ struct CountdownView: View {
             }
         }
     }
-
+    
     func animateBlur() {
         self.desenfoque.toggle()
         timerBlur = Timer.scheduledTimer(withTimeInterval: duracionDesenfoque, repeats: true) { _ in

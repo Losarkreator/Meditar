@@ -95,7 +95,6 @@ struct CountdownView: View {
                             .font(.system(size: UIScreen.main.bounds.size.width / 3.5))
                     }
                 }
-//                .frame(height: 200, alignment: .trailingLastTextBaseline)
                 .frame(height: 200)
                 .padding(20)
 //                .background(Color.amarillo)

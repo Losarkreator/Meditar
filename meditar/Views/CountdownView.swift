@@ -16,7 +16,6 @@ struct CountdownView: View {
     @State private var durationAnimation: Double = 5.0
     @State private var activateAnimation = false
     @State private var imageOpacity: Double = 1.0
-
     
     var body: some View {
         ZStack { //Fondo
@@ -115,6 +114,7 @@ struct CountdownView: View {
         .onAppear {
             startingTime = dataModel.tiempo * 60
             currentNumber = startingTime
+            UIApplication.shared.isIdleTimerDisabled = true // Desactiva el modo de suspensión automático
         }
     }
     

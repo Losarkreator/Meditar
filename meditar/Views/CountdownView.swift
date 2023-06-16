@@ -13,12 +13,9 @@ struct CountdownView: View {
     @State private var timer: Timer?
     @State private var timerBlur: Timer?
     @State private var showAlert = false
-    
     @State private var durationAnimation: Double = 5.0
     @State private var activateAnimation = false
     @State private var imageOpacity: Double = 1.0
-    
-    @State private var gradientColors: [Color] = [Color.blanco, Color.rojo, Color.rojo]
 
     
     var body: some View {
@@ -27,7 +24,7 @@ struct CountdownView: View {
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
                 .edgesIgnoringSafeArea(.all)
             
-            VStack { //Margenes
+            VStack(alignment: .center) { //Margenes
                 //MARK: - Cabecera
                 Group {
                     VStack {
@@ -37,21 +34,45 @@ struct CountdownView: View {
                     .font(.largeTitle)
                     .fontWeight(.black)
                     .foregroundColor(.blanco)
-                .padding(.bottom, 40.0)
+                .frame(alignment: .top)
                 }
+//                .background(Color.negro)
+                
+                Spacer()
+                
+                //MARK: - Imagen
+                Group {
+                    ZStack {
+                        Image("MeditIcon") //Imagen de fondo
+                            .resizable()
+                            .scaledToFit()
+                            .shadow(color: .negro.opacity(0.5), radius: 5, x: 0, y: 5)
+                        
+                        Rectangle() //Degradado
+                            .fill(LinearGradient(gradient: Gradient(colors: [Color.blanco, dataModel.color, dataModel.color]), startPoint: .top, endPoint: .bottom))
+                            .opacity(activateAnimation ? 1.0 : 0.1)
+                            .mask(Image("MeditIcon").resizable().scaledToFit())
+                            .blur(radius: activateAnimation ? 5 : 0)
+                            .animation(.linear(duration: isCountdownRunning ? durationAnimation : 0.1))
+                    }
+                }
+                .frame(height: UIScreen.main.bounds.size.height / 3)
+//                .background(Color.morado)
+                
+                Spacer()
                 
                 // Circulos //Boton
                 ZStack {
                     //MARK: - Circulos
                     Group {
                         Circle()
-                            .stroke(lineWidth: 40)
+                            .stroke(lineWidth: 30)
                             .opacity(0.05)
                             .foregroundColor(.negro)
                         
                         Circle()
                             .trim(from: 0, to: CGFloat(currentNumber) / CGFloat(startingTime))
-                            .stroke(Color.blanco, style: StrokeStyle(lineWidth: 40,lineCap: .round))
+                            .stroke(Color.blanco, style: StrokeStyle(lineWidth: 30,lineCap: .round))
                             .rotationEffect(.degrees(-90))
                             .animation(.linear(duration: isCountdownRunning ? 1.0 : 0.2))
                     }
@@ -72,42 +93,18 @@ struct CountdownView: View {
                     }) {
                         Image(systemName: isCountdownRunning ? "stop.fill" : "play.fill")
                             .foregroundColor(.blanco)
-                            .font(.system(size: UIScreen.main.bounds.size.width / 3))
+                            .font(.system(size: UIScreen.main.bounds.size.width / 3.5))
                     }
                 }
-                .padding(.horizontal, 50.0)
-                
-                Spacer()
-                
-                //MARK: - Imagen
-                Group {
-                    ZStack {
-                        
-                        
-                        
-                        
-                        
-                        Image("MeditIcon") //Imagen de fondo
-                            .resizable()
-                            .scaledToFit()
-                            .shadow(color: .negro.opacity(0.5), radius: 5, x: 0, y: 5)
-                        
-                        
-                        Rectangle() //Degradado
-                            .fill(LinearGradient(gradient: Gradient(colors: gradientColors), startPoint: .top, endPoint: .bottom))
-                            .opacity(activateAnimation ? 1.0 : 0.1)
-                            .mask(Image("MeditIcon").resizable().scaledToFit())
-                            .blur(radius: activateAnimation ? 5 : 0)
-                            .animation(.linear(duration: durationAnimation))
-                    }
-                }
-                .frame(height: UIScreen.main.bounds.size.width / 1.8)
-//                .background(Color.morado)
+//                .frame(height: 200, alignment: .trailingLastTextBaseline)
+                .frame(height: 200)
+                .padding(20)
+//                .background(Color.amarillo)
                 
             } //Margenes
-//            .background(.black.opacity(0.2))
+            .frame(maxHeight: .infinity)
+//            .background(Color.blanco.opacity(0.2))
             .padding(.bottom)
-            .padding(.horizontal, 20.0)
             .alert(isPresented: $showAlert) {
                 Alert(title: Text("¡Enhorabuena!"),
                       message: Text("Has completado la meditación"),
@@ -124,7 +121,7 @@ struct CountdownView: View {
     //MARK: - Funciones
     func startCountdown(with minutos: Int) {
         resetCountdown()
-        animateBlur()
+        animateBreathing()
         currentNumber = minutos
         timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { _ in
             currentNumber -= 1
@@ -140,38 +137,12 @@ struct CountdownView: View {
         }
     }
     
-    func animateBlur() {
+    func animateBreathing() {
         self.activateAnimation.toggle()
         timerBlur = Timer.scheduledTimer(withTimeInterval: durationAnimation, repeats: true) { _ in
             self.activateAnimation.toggle()
         }
-        
-//        if activateAnimation {
-//            withAnimation(.easeInOut(duration: 2.0)) {
-//                imageOpacity = 0.1
-//            }
-//        } else {
-//            withAnimation(.easeInOut(duration: 2.0)) {
-//                imageOpacity = 1.0
-//            }
-//        }
-        
-        
-        
     }
-    
-//    func animateOpacity() {
-//        activateAnimation.toggle()
-//        if activateAnimation {
-//            withAnimation(.easeInOut(duration: 2.0)) {
-//                imageOpacity = 0.1
-//            }
-//        } else {
-//            withAnimation(.easeInOut(duration: 2.0)) {
-//                imageOpacity = 1.0
-//            }
-//        }
-//    }
     
     func resetCountdown() {
         currentNumber = startingTime

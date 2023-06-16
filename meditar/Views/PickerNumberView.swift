@@ -66,8 +66,10 @@ struct NavigationButton: View {
                 .shadow(color: .black.opacity(0.3), radius: 3, x: 1, y: 3))
             .padding(32.0)
             //TODO: Poner titulo a esta seccion sin que desaparezca el anterior de Niveles y no se vea
-//            .navigationBarTitle("Seleccionar duración")
-//            .navigationBarHidden(false)
+//            .navigationBarTitle(Text("Seleccionar duración"), displayMode: .inline)
+            .navigationTitle("Seleccionar duración")
+            .toolbarColorScheme(.dark, for: .navigationBar)
+            
         }
     }
 }

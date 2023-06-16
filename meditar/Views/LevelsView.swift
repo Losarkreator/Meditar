@@ -104,8 +104,9 @@ struct LevelsView: View {
                 }
                 .padding(.horizontal, 30.0)
             }
-            .navigationBarTitle("Niveles")
+            .navigationBarTitle(Text("Niveles"), displayMode: .inline)
             .navigationBarHidden(true)
+//            .toolbar(.hidden, for: .navigationBar)
         }
         .accentColor(.blanco)
     }

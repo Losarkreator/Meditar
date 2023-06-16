@@ -12,9 +12,14 @@ struct CountdownView: View {
     @State private var startingTime = 0
     @State private var timer: Timer?
     @State private var timerBlur: Timer?
-    @State private var desenfoque = false
-    @State private var duracionDesenfoque: Double = 5.0
     @State private var showAlert = false
+    
+    @State private var durationAnimation: Double = 5.0
+    @State private var activateAnimation = false
+    @State private var imageOpacity: Double = 1.0
+    
+    @State private var gradientColors: [Color] = [Color.blanco, Color.rojo, Color.rojo]
+
     
     var body: some View {
         ZStack { //Fondo
@@ -24,14 +29,16 @@ struct CountdownView: View {
             
             VStack { //Margenes
                 //MARK: - Cabecera
-                VStack {
-                    Text("\(dataModel.nivel)")
-                    Text("\(formatTime(seconds: currentNumber))")
-                }
-                .font(.largeTitle)
-                .fontWeight(.black)
-                .foregroundColor(.blanco)
+                Group {
+                    VStack {
+                        Text("\(dataModel.nivel)")
+                        Text("\(formatTime(seconds: currentNumber))")
+                    }
+                    .font(.largeTitle)
+                    .fontWeight(.black)
+                    .foregroundColor(.blanco)
                 .padding(.bottom, 40.0)
+                }
                 
                 // Circulos //Boton
                 ZStack {
@@ -74,17 +81,32 @@ struct CountdownView: View {
                 
                 //MARK: - Imagen
                 Group {
-                    Image("MeditIcon")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                    .blur(radius: desenfoque ? 5 : 0)
-                    .animation(Animation.easeInOut(duration: isCountdownRunning ? duracionDesenfoque : 0))
+                    ZStack {
+                        
+                        
+                        
+                        
+                        
+                        Image("MeditIcon") //Imagen de fondo
+                            .resizable()
+                            .scaledToFit()
+                            .shadow(color: .negro.opacity(0.5), radius: 5, x: 0, y: 5)
+                        
+                        
+                        Rectangle() //Degradado
+                            .fill(LinearGradient(gradient: Gradient(colors: gradientColors), startPoint: .top, endPoint: .bottom))
+                            .opacity(activateAnimation ? 1.0 : 0.1)
+                            .mask(Image("MeditIcon").resizable().scaledToFit())
+                            .blur(radius: activateAnimation ? 5 : 0)
+                            .animation(.linear(duration: durationAnimation))
+                    }
                 }
                 .frame(height: UIScreen.main.bounds.size.width / 1.8)
 //                .background(Color.morado)
                 
             } //Margenes
 //            .background(.black.opacity(0.2))
+            .padding(.bottom)
             .padding(.horizontal, 20.0)
             .alert(isPresented: $showAlert) {
                 Alert(title: Text("¡Enhorabuena!"),
@@ -109,7 +131,7 @@ struct CountdownView: View {
             
             // Llega a 0
             if currentNumber == 0 {
-                self.desenfoque = false
+                self.activateAnimation = false
                 timer?.invalidate()
                 timerBlur?.invalidate()
                 viewModel.playSystemSound(soundID: 1030)
@@ -119,17 +141,43 @@ struct CountdownView: View {
     }
     
     func animateBlur() {
-        self.desenfoque.toggle()
-        timerBlur = Timer.scheduledTimer(withTimeInterval: duracionDesenfoque, repeats: true) { _ in
-            self.desenfoque.toggle()
+        self.activateAnimation.toggle()
+        timerBlur = Timer.scheduledTimer(withTimeInterval: durationAnimation, repeats: true) { _ in
+            self.activateAnimation.toggle()
         }
+        
+//        if activateAnimation {
+//            withAnimation(.easeInOut(duration: 2.0)) {
+//                imageOpacity = 0.1
+//            }
+//        } else {
+//            withAnimation(.easeInOut(duration: 2.0)) {
+//                imageOpacity = 1.0
+//            }
+//        }
+        
+        
+        
     }
+    
+//    func animateOpacity() {
+//        activateAnimation.toggle()
+//        if activateAnimation {
+//            withAnimation(.easeInOut(duration: 2.0)) {
+//                imageOpacity = 0.1
+//            }
+//        } else {
+//            withAnimation(.easeInOut(duration: 2.0)) {
+//                imageOpacity = 1.0
+//            }
+//        }
+//    }
     
     func resetCountdown() {
         currentNumber = startingTime
         timer?.invalidate()
         timerBlur?.invalidate()
-        self.desenfoque = false
+        self.activateAnimation = false
     }
     
     func formatTime(seconds: Int) -> String {

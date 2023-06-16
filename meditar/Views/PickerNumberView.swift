@@ -15,12 +15,14 @@ struct PickerNumberView: View {
                 Spacer()
                 
                 //MARK: - Titulo
-                Text("¿Cuantos minutos?")
-                    .font(.largeTitle)
-                    .fontWeight(.bold)
-                    .foregroundColor(.blanco)
-                    .multilineTextAlignment(.center)
+                Group {
+                    Text("¿Cuantos minutos?")
+                        .font(.largeTitle)
+                        .fontWeight(.bold)
+                        .foregroundColor(.blanco)
+                        .multilineTextAlignment(.center)
                     .shadow(color: .black.opacity(0.3), radius: 3, x: 1, y: 3)
+                }
 
                 Spacer()
                 
@@ -38,7 +40,26 @@ struct PickerNumberView: View {
                 Spacer()
                 
                 //MARK: - NavigationLink
-                NavigationButton(selectedNumber: selectedNumber)
+                Group {
+                    NavigationLink(destination: CountdownView(dataModel: LevelModel(nivel: "Personalizado", color: .azul, tiempo: selectedNumber))) {
+                        
+                        HStack {
+                            Spacer()
+                            Text("Siguiente")
+                                .font(.title)
+                                .fontWeight(.bold)
+                                .foregroundColor(Color.azul)
+                            Spacer()
+                        }
+                        .padding(.vertical, 20.0)
+                        .background(Capsule().fill(Color.blanco)
+                            .shadow(color: .black.opacity(0.3), radius: 3, x: 1, y: 3))
+                        .padding(32.0)
+                        .navigationTitle("Seleccionar duración")
+                        .toolbarColorScheme(.dark, for: .navigationBar)
+                        
+                    }
+                }
             }
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -47,6 +68,7 @@ struct PickerNumberView: View {
     }
 }
 
+/*
 struct NavigationButton: View {
     var selectedNumber: Int
     
@@ -65,14 +87,13 @@ struct NavigationButton: View {
             .background(Capsule().fill(Color.blanco)
                 .shadow(color: .black.opacity(0.3), radius: 3, x: 1, y: 3))
             .padding(32.0)
-            //TODO: Poner titulo a esta seccion sin que desaparezca el anterior de Niveles y no se vea
-//            .navigationBarTitle(Text("Seleccionar duración"), displayMode: .inline)
             .navigationTitle("Seleccionar duración")
             .toolbarColorScheme(.dark, for: .navigationBar)
             
         }
     }
 }
+ */
 
 
 struct PickerNumberView_Previews: PreviewProvider {

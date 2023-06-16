@@ -47,13 +47,18 @@ struct LevelsView: View {
                         
                         //MARK: - Custom
                         CustomLevelView(dataModel: LevelModel(nivel: "Custom", color: .azul, tiempo: 60), destination: AnyView(PickerNumberView()))
-                        
-                        
                     }
                     
                     Spacer()
                     
-                    //MARK: - Desplegar descripcion
+                    //MARK: - Instrucciones
+                    CustomNavigationButton(destination: AnyView(Instructions()), texto: "Instrucciones"
+//                                           , colorCirculo: .azulIndigo
+//                                           , textoEspecial: false
+                    )
+                    
+                    // Desplegar descripcion
+                    /*
                     if !isDescriptionVisible {
                         HStack() {
                             Spacer()
@@ -100,7 +105,7 @@ struct LevelsView: View {
                             .foregroundColor(.black.opacity(0.2)))
                         .padding(.top, 20.0)
                     }
-                    
+                     */
                 }
                 .padding(.horizontal, 30.0)
             }

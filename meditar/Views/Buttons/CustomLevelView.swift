@@ -35,7 +35,7 @@ struct CustomLevelView<Destination: View>: View {
 
 struct CustomLevelView_Previews: PreviewProvider {
     static var previews: some View {
-        let viewModel = ViewModel()
+//        let viewModel = ViewModel()
         CustomLevelView(dataModel: LevelModel(nivel: "Custom", color: .azulIndigo, tiempo: 1), destination: PickerNumberView(customBackgroundColor: .azulIndigo))
     }
 }

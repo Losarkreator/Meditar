@@ -41,20 +41,20 @@ struct ContentView: View {
     }
 }
 
-struct PageControl: View {
-    var numberOfPages: Int
-    @Binding var currentPage: Int
-    
-    var body: some View {
-        HStack {
-            ForEach(0..<numberOfPages) { page in
-                Circle()
-                    .fill(page == currentPage ? Color.blanco : Color.gray)
-                    .frame(width: 10, height: 10)
-            }
-        }
-    }
-}
+//struct PageControl: View {
+//    var numberOfPages: Int
+//    @Binding var currentPage: Int
+//
+//    var body: some View {
+//        HStack {
+//            ForEach(0..<numberOfPages) { page in
+//                Circle()
+//                    .fill(page == currentPage ? Color.blanco : Color.gray)
+//                    .frame(width: 10, height: 10)
+//            }
+//        }
+//    }
+//}
 
 
 

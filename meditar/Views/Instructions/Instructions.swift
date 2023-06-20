@@ -40,7 +40,7 @@ struct Instructions: View {
                     }
                     
                     ZStack {
-                        CustomNavigationButton(destination: Instructions())
+                        CustomNavigationButton(destination: PreviousInstructions())
                         Text("Instrucciones previas")
                             .font(.title2)
                             .fontWeight(.bold)

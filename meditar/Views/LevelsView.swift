@@ -18,6 +18,10 @@ struct LevelsView: View {
     }
     @State private var isDescriptionVisible = false
     
+    init() {
+            UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor.white] // Modifica el estilo de apariencia de navegación para cambiar el color del título
+        }
+    
     var body: some View {
         NavigationView {
             ZStack {
@@ -45,8 +49,10 @@ struct LevelsView: View {
                         
                         LevelButtonNavigation(dataModel: viewModel.maestro, destination: CountdownView(dataModel: viewModel.maestro))
                         
+                        LevelButtonNavigation(dataModel: viewModel.lama, destination: CountdownView(dataModel: viewModel.lama))
+                        
                         //MARK: - Custom
-                        CustomLevelView(dataModel: LevelModel(nivel: "Custom", color: .azul, tiempo: 60), destination: PickerNumberView())
+                        CustomLevelView(dataModel: LevelModel(nivel: "Custom", color: .azulIndigo, tiempo: 60), destination: PickerNumberView(customBackgroundColor: .azulIndigo))
                     }
                     
                     Spacer()
@@ -55,7 +61,6 @@ struct LevelsView: View {
                     ZStack {
                         CustomNavigationButton(destination: Instructions())
                         Text("Instrucciones")
-//                            .font(.title3)
                             .font(.title)
                             .fontWeight(.bold)
                             .foregroundColor(Color.morado)

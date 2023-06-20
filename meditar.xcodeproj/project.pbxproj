@@ -61,6 +61,7 @@
 		87229D102A21F74E00BE334B /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				874F09462A42151700D9460D /* Instructions */,
 				879C463C2A249E9300FFB344 /* LevelsView.swift */,
 				8777E6232A27A86E00996AAF /* CountdownView.swift */,
 				8721B3A12A2CD8E4006DC08A /* PickerNumberView.swift */,
@@ -96,6 +97,13 @@
 				87A3323A2A2DE8E300003CF3 /* AnimationTypes.swift */,
 			);
 			path = SEG;
+			sourceTree = "<group>";
+		};
+		874F09462A42151700D9460D /* Instructions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Instructions;
 			sourceTree = "<group>";
 		};
 		8781DEA52A22565400BA8142 /* Utils */ = {

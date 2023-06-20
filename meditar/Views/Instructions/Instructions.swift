@@ -9,27 +9,32 @@ struct Instructions: View {
         ZStack {
             Color.amarillo
                 .edgesIgnoringSafeArea(.vertical)
-//            LinearGradient(gradient: Gradient(colors: [.amarillo, .negro.opacity(0.2)]), startPoint: .top, endPoint: .bottom).edgesIgnoringSafeArea(.all)
+            LinearGradient(gradient: Gradient(colors: [.naranja.opacity(0.3), .amarillo]), startPoint: .top, endPoint: .bottom).edgesIgnoringSafeArea(.all)
             
             VStack(alignment: .leading) {
-                Text("Instrucciones")
-                    .font(.largeTitle)
-                    .fontWeight(.bold)
-                    .foregroundColor(Color.white)
-//                    .padding(.top, 70.0)
-                    .padding(.bottom, 60.0)
-                    .shadow(color: .black.opacity(0.3), radius: 3, x: 1, y: 3)
+                
+                // Titulo
+                /*
+                Group {
+                    Text("Instrucciones")
+                        .font(.largeTitle)
+                        .fontWeight(.bold)
+                        .foregroundColor(Color.white)
+    //                    .padding(.top, 70.0)
+                        .padding(.bottom, 60.0)
+                        .shadow(color: .black.opacity(0.3), radius: 3, x: 1, y: 3)
                     .frame(alignment: .top)
+                }
+                 */
                 
                 Spacer()
                 
                 //MARK: - Instrucciones
                 VStack {
                     ZStack {
-                        CustomNavigationButton(destination: Instructions())
+                        CustomNavigationButton(destination: Benefits())
                         Text("Beneficios")
                             .font(.title2)
-                        //                        .font(.title3)
                             .fontWeight(.bold)
                             .foregroundColor(Color.negro)
                     }
@@ -67,6 +72,7 @@ struct Instructions: View {
             
             
         }
+        .navigationTitle("Instrucciones")
     }
 }
 

@@ -61,7 +61,7 @@ struct LevelsView: View {
                     ZStack {
                         CustomNavigationButton(destination: Instructions())
                         Text("Instrucciones")
-                            .font(.title)
+                            .font(.title2)
                             .fontWeight(.bold)
                             .foregroundColor(Color.morado)
                     }

@@ -33,9 +33,9 @@ struct CountdownView: View {
                     .font(.largeTitle)
                     .fontWeight(.black)
                     .foregroundColor(.blanco)
-                .frame(alignment: .top)
+                    .frame(alignment: .top)
                 }
-//                .background(Color.negro)
+                //                .background(Color.negro)
                 
                 Spacer()
                 
@@ -56,7 +56,7 @@ struct CountdownView: View {
                     }
                 }
                 .frame(height: UIScreen.main.bounds.size.height / 3)
-//                .background(Color.morado)
+                //                .background(Color.morado)
                 
                 Spacer()
                 
@@ -97,11 +97,11 @@ struct CountdownView: View {
                 }
                 .frame(height: 200)
                 .padding(20)
-//                .background(Color.amarillo)
+                //                .background(Color.amarillo)
                 
             } //Margenes
             .frame(maxHeight: .infinity)
-//            .background(Color.blanco.opacity(0.2))
+            //            .background(Color.blanco.opacity(0.2))
             .padding(.bottom)
             .alert(isPresented: $showAlert) {
                 Alert(title: Text("¡Enhorabuena!"),

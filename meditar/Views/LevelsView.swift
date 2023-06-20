@@ -46,15 +46,26 @@ struct LevelsView: View {
                         LevelButtonNavigation(dataModel: viewModel.maestro, destination: CountdownView(dataModel: viewModel.maestro))
                         
                         //MARK: - Custom
-                        CustomLevelView(dataModel: LevelModel(nivel: "Custom", color: .azul, tiempo: 60), destination: AnyView(PickerNumberView()))
-                        
-                        
+                        CustomLevelView(dataModel: LevelModel(nivel: "Custom", color: .azul, tiempo: 60), destination: PickerNumberView())
                     }
                     
                     Spacer()
                     
-                    //MARK: - Desplegar descripcion
-                    if !isDescriptionVisible {
+                    //MARK: - Instrucciones
+                    ZStack {
+                        CustomNavigationButton(destination: Instructions())
+                        Text("Instrucciones")
+//                            .font(.title3)
+                            .font(.title)
+                            .fontWeight(.bold)
+                            .foregroundColor(Color.morado)
+                    }
+                    
+                    
+                    /*
+                     //MARK: - Desplegar descripcion
+                     Group {
+                        if !isDescriptionVisible {
                         HStack() {
                             Spacer()
                             Button(action: {
@@ -100,7 +111,8 @@ struct LevelsView: View {
                             .foregroundColor(.black.opacity(0.2)))
                         .padding(.top, 20.0)
                     }
-                    
+                    }
+                     */
                 }
                 .padding(.horizontal, 30.0)
             }

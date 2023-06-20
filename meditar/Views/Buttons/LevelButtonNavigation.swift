@@ -19,20 +19,15 @@ struct LevelButtonNavigation: View {
                 Text("\(dataModel.nivel): ")
                     .font(.title3)
                     .fontWeight(.bold)
-                    .foregroundColor(Color.black)
+                    .foregroundColor(Color.negro)
                 
                 Spacer()
                 
                 Text("\(dataModel.tiempo)'")
                     .font(.title3)
                     .fontWeight(.bold)
-                    .foregroundColor(Color.black)
+                    .foregroundColor(Color.negro)
                     .padding(.trailing, 20.0)
-                    
-//                Spacer()
-                
-                
-                
             }
             .padding(.horizontal, 24.0)
             .padding(.vertical, 12.0)

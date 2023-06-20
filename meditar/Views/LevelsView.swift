@@ -18,6 +18,10 @@ struct LevelsView: View {
     }
     @State private var isDescriptionVisible = false
     
+    init() {
+            UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor.white] // Modifica el estilo de apariencia de navegación para cambiar el color del título
+        }
+    
     var body: some View {
         NavigationView {
             ZStack {
@@ -45,16 +49,28 @@ struct LevelsView: View {
                         
                         LevelButtonNavigation(dataModel: viewModel.maestro, destination: CountdownView(dataModel: viewModel.maestro))
                         
+                        LevelButtonNavigation(dataModel: viewModel.lama, destination: CountdownView(dataModel: viewModel.lama))
+                        
                         //MARK: - Custom
-                        CustomLevelView(dataModel: LevelModel(nivel: "Custom", color: .azul, tiempo: 60), destination: AnyView(PickerNumberView()))
-                        
-                        
+                        CustomLevelView(dataModel: LevelModel(nivel: "Custom", color: .azulIndigo, tiempo: 60), destination: PickerNumberView(customBackgroundColor: .azulIndigo))
                     }
                     
                     Spacer()
                     
-                    //MARK: - Desplegar descripcion
-                    if !isDescriptionVisible {
+                    //MARK: - Instrucciones
+                    ZStack {
+                        CustomNavigationButton(destination: Instructions())
+                        Text("Instrucciones")
+                            .font(.title)
+                            .fontWeight(.bold)
+                            .foregroundColor(Color.morado)
+                    }
+                    
+                    
+                    /*
+                     //MARK: - Desplegar descripcion
+                     Group {
+                        if !isDescriptionVisible {
                         HStack() {
                             Spacer()
                             Button(action: {
@@ -100,7 +116,8 @@ struct LevelsView: View {
                             .foregroundColor(.black.opacity(0.2)))
                         .padding(.top, 20.0)
                     }
-                    
+                    }
+                     */
                 }
                 .padding(.horizontal, 30.0)
             }

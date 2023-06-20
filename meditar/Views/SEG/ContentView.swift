@@ -2,48 +2,60 @@
 //  meditar
 //  Created by Losark on 27/5/23.
 
-
 import SwiftUI
 
 struct ContentView: View {
-    @State private var imageOpacity: Double = 1.0 // Opacidad inicial
-    @State private var activateAnimation = false
-    @State private var gradientColors: [Color] = [Color.red, Color.blanco, Color.blanco]
+    @State private var currentPage = 0
     
     var body: some View {
-        ZStack {
-            Image("MeditIcon")
-                .resizable()
-                .scaledToFit()
-                .colorMultiply(.red)
-            Rectangle()
-                .fill(LinearGradient(gradient: Gradient(colors: gradientColors), startPoint: .top, endPoint: .bottom))
-                .opacity(imageOpacity)
-                .onTapGesture {
-                    animateOpacity()
-                }
-                .mask(
-                    Image("MeditIcon")
-                        .resizable()
-                        .scaledToFit()
-            )
-        }
-    }
-    
-    func animateOpacity() {
-        activateAnimation.toggle()
-        if activateAnimation {
-            withAnimation(.easeInOut(duration: 2.0)) {
-                imageOpacity = 0.1
-            }
-        } else {
-            withAnimation(.easeInOut(duration: 2.0)) {
-                imageOpacity = 1.0
-            }
-        }
-    }
         
+        ZStack {
+            
+            Color.morado.opacity(0.5).edgesIgnoringSafeArea(.vertical)
+            
+            VStack {
+                TabView(selection: $currentPage) {
+                    VStack {
+                    //TODO: Cambiar ilustracion
+                        Image("MeditIcon")
+                            .resizable()
+                            .scaledToFit()
+                            .padding()
+                        
+                        //TODO: Cambiar Texto
+                        Text("Texto de la primera página")
+                    }
+                    .tag(0)
+                    
+                    Text("Página 2")
+                        .tag(1)
+                    Text("Página 3")
+                        .tag(2)
+                }
+                .tabViewStyle(PageTabViewStyle(indexDisplayMode: .automatic))
+                
+//                PageControl(numberOfPages: 3, currentPage: $currentPage)
+//                    .padding()
+            }
+        }
+    }
 }
+
+struct PageControl: View {
+    var numberOfPages: Int
+    @Binding var currentPage: Int
+    
+    var body: some View {
+        HStack {
+            ForEach(0..<numberOfPages) { page in
+                Circle()
+                    .fill(page == currentPage ? Color.blanco : Color.gray)
+                    .frame(width: 10, height: 10)
+            }
+        }
+    }
+}
+
 
 
 struct ContentView_Previews: PreviewProvider {

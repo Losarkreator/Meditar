@@ -12,6 +12,7 @@ class ViewModel: ObservableObject {
     @Published var intermedio: LevelModel
     @Published var experto: LevelModel
     @Published var maestro: LevelModel
+    @Published var lama: LevelModel
     var engine: CHHapticEngine?
     
     @Published var currentNumber: Int = 0
@@ -22,6 +23,7 @@ class ViewModel: ObservableObject {
         intermedio = LevelModel(nivel: "Intermedio", color: Color.naranja, tiempo: 15)
         experto = LevelModel(nivel: "Experto", color: Color.amarillo, tiempo: 30)
         maestro = LevelModel(nivel: "Maestro", color: Color.verde, tiempo: 60)
+        lama = LevelModel(nivel: "Lama", color: Color.azul, tiempo: 120)
         
         do {
             engine = try CHHapticEngine()

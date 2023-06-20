@@ -1,15 +1,12 @@
-//
 //  CustomLevelView.swift
 //  meditar
-//
 //  Created by Losark on 4/6/23.
-//
 
 import SwiftUI
 
-struct CustomLevelView: View {
+struct CustomLevelView<Destination: View>: View {
     var dataModel: LevelModel
-    var destination: AnyView
+    var destination: Destination
     
     
     var body: some View {
@@ -23,14 +20,9 @@ struct CustomLevelView: View {
                 Text("Selecciona duración")
                     .font(.title3)
                     .fontWeight(.bold)
-                    .foregroundColor(Color.black)
-                
+                    .foregroundColor(Color.negro)
                 
                 Spacer()
-                
-//                Image(systemName: "chevron.right")
-//                    .font(.system(size: 20, weight: .bold))
-//                    .foregroundColor(.morado)
                 
             }
             .padding(.horizontal, 24.0)
@@ -38,13 +30,12 @@ struct CustomLevelView: View {
             .background(Capsule().fill(Color.blanco).shadow(color: .black.opacity(0.3), radius: 5, x: 0, y: 5))
         }
         
-        
     }
 }
 
 struct CustomLevelView_Previews: PreviewProvider {
     static var previews: some View {
         let viewModel = ViewModel()
-        CustomLevelView(dataModel: LevelModel(nivel: "Custom", color: .azul, tiempo: 1), destination: AnyView(PickerNumberView()))
+        CustomLevelView(dataModel: LevelModel(nivel: "Custom", color: .azulIndigo, tiempo: 1), destination: PickerNumberView(customBackgroundColor: .azulIndigo))
     }
 }

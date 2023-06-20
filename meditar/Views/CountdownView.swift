@@ -56,7 +56,19 @@ struct CountdownView: View {
                     }
                 }
                 .frame(height: UIScreen.main.bounds.size.height / 3)
-                //                .background(Color.morado)
+                //.background(Color.morado)
+                
+                Spacer()
+                
+                //MARK: - Inalar - Exalar
+                Group {
+                    Text(isCountdownRunning ? (activateAnimation ? "Inala" : "Exala") : " ")
+                        .fontWeight(.heavy)
+                        .foregroundColor(.blanco)
+                        .font(.system(size: 40.0))
+                    .minimumScaleFactor(0.5)
+                }
+                    
                 
                 Spacer()
                 

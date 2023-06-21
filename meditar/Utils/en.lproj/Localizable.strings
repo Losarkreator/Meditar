@@ -1,0 +1,45 @@
+"hellow_string" = "Hi!";
+"introduction_string %@" = "My name is  %@.";
+"description_string" = "This is a description example.";
+
+
+"levels_string" = "Levels";
+"beginner_string" = "Beginner";
+"intermediate_string" = "Intermediate";
+"expert_string" = "Expert";
+"master_string" = "Master";
+"lama_string" = "Lama";
+"custom_string" = "Custom";
+"selectDuration_string" = "Select duration";
+"instructions_string" = "Instructions";
+
+
+"howManyMinutes_string" = "How many minutes?";
+"next_string" = "Next";
+
+
+"benefits_string" = "Benefits";
+"benefitsTitle_string" = "Benefits of meditation";
+"benefitsDescription_string" = "Meditation has been practiced for millennia and has been associated with a wide range of health and wellness benefits.";
+
+"stressReductionTitle_string" = "Stress reduction";
+"stressReductionDescription_string" = "Meditation is known for its ability to reduce stress and promote relaxation. It can help decrease the body's response to stress, reduce anxiety, and improve mood.";
+
+"improveConcentrationTitle_string" = "Improve concentration";
+"improveConcentrationDescription_string" = "The regular practice of meditation can strengthen attention and improve concentration. This can be beneficial both at work and at study, helping you stay more focused and productive.";
+
+"mentalHealthTitle_string" = "Mental health";
+"mentalHealthDescription_string" = "Meditation has been linked to an improvement in overall mental health. It can help reduce symptoms of depression, anxiety, and related disorders. Additionally, it can promote self-awareness and emotional self-regulation.";
+
+"improveDecisionMakingTitle_string" = "Improve decision making";
+"improveDecisionMakingDescription_string" = "The practice of meditation can lead to greater mental clarity and an increased ability to make informed and conscious decisions. By calming the mind and reducing rumination, you can experience greater clarity and perspective in your life.";
+
+"empathyCompassionTitle_string" = "Empathy and compassion";
+"empathyCompassionDescription_string" = "By cultivating mindfulness and self-compassion, meditation can promote attitudes of empathy and compassion toward oneself and others. This can strengthen interpersonal relationships and promote greater emotional well-being.";
+
+"improvedQleepQualityTitle_string" = "Improved sleep quality";
+"improvedQleepQualityDescription_string" = "Meditation can be helpful in promoting more restful sleep. By reducing stress and calming the mind, it can help you fall asleep more easily and improve the quality of your night's rest.";
+
+
+"previousInstructions_string" = "Previous instructions";
+"basicMeditation_string" = "Basic meditation";

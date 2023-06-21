@@ -33,7 +33,7 @@ struct Instructions: View {
                 VStack {
                     ZStack {
                         CustomNavigationButton(destination: Benefits())
-                        Text("Beneficios")
+                        Text("benefits_string")
                             .font(.title2)
                             .fontWeight(.bold)
                             .foregroundColor(Color.negro)
@@ -41,7 +41,7 @@ struct Instructions: View {
                     
                     ZStack {
                         CustomNavigationButton(destination: PreviousInstructions())
-                        Text("Instrucciones previas")
+                        Text("previousInstructions_string")
                             .font(.title2)
                             .fontWeight(.bold)
                             .foregroundColor(Color.negro)
@@ -49,14 +49,14 @@ struct Instructions: View {
                     
                     ZStack {
                         CustomNavigationButton(destination: Instructions())
-                        Text("Meditación básica")
+                        Text("basicMeditation_string")
                             .font(.title2)
                             .fontWeight(.bold)
                             .foregroundColor(Color.negro)
                     }
                     
                     ZStack {
-                        CustomNavigationButton(destination: Instructions())
+                        CustomNavigationButton(destination: ContentView())
                         Text("Anapanasati")
                             .font(.title2)
                             .fontWeight(.bold)

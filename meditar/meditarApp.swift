@@ -10,6 +10,7 @@ struct meditarApp: App {
     var body: some Scene {
         WindowGroup {
             SplashScreenView()
+                .environment(\.locale, Locale.init(identifier: "es"))
         }
     }
     

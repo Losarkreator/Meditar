@@ -19,11 +19,11 @@ class ViewModel: ObservableObject {
     @State private var timer: Timer?
     
     init() {
-        principiante = LevelModel(nivel: "Principiante", color: Color.rojo, tiempo: 5)
-        intermedio = LevelModel(nivel: "Intermedio", color: Color.naranja, tiempo: 15)
-        experto = LevelModel(nivel: "Experto", color: Color.amarillo, tiempo: 30)
-        maestro = LevelModel(nivel: "Maestro", color: Color.verde, tiempo: 60)
-        lama = LevelModel(nivel: "Lama", color: Color.azul, tiempo: 120)
+        principiante = LevelModel(nivel: NSLocalizedString("beginner_string", comment: ""), color: Color.rojo, tiempo: 5)
+        intermedio = LevelModel(nivel: NSLocalizedString("intermediate_string", comment: ""), color: Color.naranja, tiempo: 15)
+        experto = LevelModel(nivel: NSLocalizedString("expert_string", comment: ""), color: Color.amarillo, tiempo: 30)
+        maestro = LevelModel(nivel: NSLocalizedString("master_string", comment: ""), color: Color.verde, tiempo: 60)
+        lama = LevelModel(nivel: NSLocalizedString("lama_string", comment: ""), color: Color.azul, tiempo: 120)
         
         do {
             engine = try CHHapticEngine()

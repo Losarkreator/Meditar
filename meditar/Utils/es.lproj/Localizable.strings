@@ -1,0 +1,45 @@
+"hellow_string" = "Hola!";
+"introduction_string %@" = "Mi nombre es  %@.";
+"description_string" = "Esto es un ejemplo.";
+
+
+"levels_string" = "Niveles";
+"beginner_string" = "Principiante";
+"intermediate_string" = "Intermedio";
+"expert_string" = "Experto";
+"master_string" = "Maestro";
+"lama_string" = "Lama";
+"custom_string" = "Personalizado";
+"selectDuration_string" = "Seleccionar duración";
+"instructions_string" = "Instrucciones";
+
+
+"howManyMinutes_string" = "¿Cuántos minutos?";
+"next_string" = "Siguiente";
+
+
+"benefits_string" = "Beneficios";
+"benefitsTitle_string" = "Beneficios de la meditación";
+"benefitsDescription_string" = "La meditación ha sido practicada durante milenios y se ha asociado con una amplia gama de beneficios para la salud y el bienestar.";
+
+"stressReductionTitle_string" = "Reducción del estrés";
+"stressReductionDescription_string" = "La meditación es conocida por su capacidad para reducir el estrés y promover la relajación. Puede ayudar a disminuir la respuesta del cuerpo al estrés, reducir la ansiedad y mejorar el estado de ánimo.";
+
+"improveConcentrationTitle_string" = "Mejora la concentración";
+"improveConcentrationDescription_string" = "La práctica regular de la meditación puede fortalecer la atención y mejorar la concentración. Esto puede ser beneficioso tanto en el trabajo como en el estudio, ayudándote a mantenerte más enfocado y productivo.";
+
+"mentalHealthTitle_string" = "Salud mental";
+"mentalHealthDescription_string" = "La meditación se ha relacionado con una mejora de la salud mental en general. Puede ayudar a reducir los síntomas de depresión, ansiedad y trastornos relacionados. Además, puede promover la autoconciencia y la autorregulación emocional.";
+
+"improveDecisionMakingTitle_string" = "Mejora la toma de decisiones";
+"improveDecisionMakingDescription_string" = "La práctica de la meditación puede llevar a una mayor claridad mental y una mayor capacidad para tomar decisiones informadas y conscientes. Al calmar la mente y reducir la rumiación, puedes experimentar una mayor claridad y perspectiva en tu vida.";
+
+"empathyCompassionTitle_string" = "Empatía y compasión";
+"empathyCompassionDescription_string" = "Al cultivar la conciencia plena y la autocompasión, la meditación puede promover actitudes de empatía y compasión hacia uno mismo y hacia los demás. Esto puede fortalecer las relaciones interpersonales y promover un mayor bienestar emocional."; 
+
+"improvedQleepQualityTitle_string" = "Mejora de la calidad del sueño";
+"improvedQleepQualityDescription_string" = "La meditación puede ser útil para promover un sueño más reparador. Al reducir el estrés y calmar la mente, puede ayudar a conciliar el sueño más fácilmente y mejorar la calidad del descanso nocturno."; 
+
+
+"previousInstructions_string" = "Instrucciones previas";
+"basicMeditation_string" = "Meditación básica";

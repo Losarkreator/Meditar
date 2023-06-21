@@ -19,8 +19,8 @@ struct LevelsView: View {
     @State private var isDescriptionVisible = false
     
     init() {
-            UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor.white] // Modifica el estilo de apariencia de navegación para cambiar el color del título
-        }
+        UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor.white] // Modifica el estilo de apariencia de navegación para cambiar el color del título
+    }
     
     var body: some View {
         NavigationView {
@@ -31,7 +31,7 @@ struct LevelsView: View {
                 
                 VStack(alignment: .leading) {
                     //MARK: - Titulo
-                    Text("Niveles ")
+                    Text(NSLocalizedString("levels_string", comment: ""))
                         .font(.largeTitle)
                         .fontWeight(.bold)
                         .foregroundColor(Color.white)
@@ -60,68 +60,15 @@ struct LevelsView: View {
                     //MARK: - Instrucciones
                     ZStack {
                         CustomNavigationButton(destination: Instructions())
-                        Text("Instrucciones")
+                        Text(NSLocalizedString("instructions_string", comment: ""))
                             .font(.title2)
                             .fontWeight(.bold)
                             .foregroundColor(Color.morado)
                     }
-                    
-                    
-                    /*
-                     //MARK: - Desplegar descripcion
-                     Group {
-                        if !isDescriptionVisible {
-                        HStack() {
-                            Spacer()
-                            Button(action: {
-                                isDescriptionVisible = true
-                            }) {
-                                Image(systemName: "chevron.up")
-                                    .font(.system(size: 30, weight: .bold))
-                                    .foregroundColor(.blanco)
-                                    .frame(width: 60, height: 60)
-                                    .background(
-                                        Circle().foregroundColor(.morado)
-                                            .shadow(color: .black.opacity(0.3), radius: 5, x: 0, y: 5)
-                                    )
-                                
-                            }
-                            Spacer()
-                        }
-                        //MARK: - Descripción
-                    } else {
-                        VStack {
-                            ScrollView {
-                                Text(appDescription())
-                                    .font(.body)
-                                    .foregroundColor(Color.white)
-                                    .padding(.horizontal)
-                                    .padding(.top)
-                                
-                                Button(action: {
-                                    isDescriptionVisible = false
-                                    //TODO: hacer que se cierre cuando tocas en otro sitio
-                                }) {
-                                    Image(systemName: "chevron.down")
-                                        .font(.system(size: 20, weight: .bold))
-                                        .foregroundColor(.morado)
-                                        .frame(width: 40, height: 60)
-                                        .background(Circle().foregroundColor(.blanco))
-                                }
-                            }
-                            .clipped() //Evita que el texto se desborde
-                            //                            .padding(4.0)
-                        }
-                        .background(RoundedRectangle(cornerRadius: 20)
-                            .foregroundColor(.black.opacity(0.2)))
-                        .padding(.top, 20.0)
-                    }
-                    }
-                     */
                 }
                 .padding(.horizontal, 30.0)
             }
-            .navigationBarTitle(Text("Niveles"), displayMode: .inline)
+            .navigationBarTitle(NSLocalizedString("levels_string", comment: ""), displayMode: .inline)
             .navigationBarHidden(true)
         }
         .accentColor(.blanco)

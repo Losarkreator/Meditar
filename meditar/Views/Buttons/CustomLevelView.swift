@@ -17,7 +17,7 @@ struct CustomLevelView<Destination: View>: View {
                         .padding(.trailing)
                         .frame(width: 40, height: 40)
                 
-                Text("Selecciona duración")
+                Text("selectDuration_string")
                     .font(.title3)
                     .fontWeight(.bold)
                     .foregroundColor(Color.negro)

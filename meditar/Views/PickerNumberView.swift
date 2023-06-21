@@ -16,7 +16,7 @@ struct PickerNumberView: View {
                 Spacer()
                 
                 //MARK: - Titulo
-                Text("¿Cuantos minutos?")
+                Text("howManyMinutes_string")
                     .font(.largeTitle)
                     .fontWeight(.bold)
                     .foregroundColor(.blanco)
@@ -41,15 +41,15 @@ struct PickerNumberView: View {
                 //MARK: - NavigationLink
                 Group {
                     ZStack {
-                        CustomNavigationButton(destination: CountdownView(dataModel: LevelModel(nivel: "Personalizado", color: .azulIndigo, tiempo: selectedNumber)))
-                        Text("Siguiente")
+                        CustomNavigationButton(destination: CountdownView(dataModel: LevelModel(nivel: NSLocalizedString("custom_string", comment: ""), color: .azulIndigo, tiempo: selectedNumber)))
+                        Text("next_string")
                             .font(.title)
                             .fontWeight(.bold)
                             .foregroundColor(customBackgroundColor)
                     }
                     .padding(.vertical, 20.0)
                     .padding(32.0)
-                    .navigationTitle("Seleccionar duración")
+                    .navigationTitle("selectDuration_string")
                 }
                 
                 

@@ -50,3 +50,9 @@ Tumbarse debe ser el último recurso, ya que es muy fácil quedarse dormido.";
 
 
 "basicMeditation_string" = "Meditación básica";
+"watchTheBreathTitle_string" = "Observar la respiración";
+"watchTheBreathDescription_string" = "Mantén la atención en la respiración, observa cada inhalación y exhalación. No cierres los ojos completamente, se cerraran solos a medida que profundices en la meditación. Mientras tanto, mantén la vista en un punto fijo, puede ser un punto pequeño que tengas en frente o la punta de tu nariz.";
+"tipsTitle_string" = "Consejos";
+"tipsDescription_string" = "Siente el flujo de aire que entra y sale por las fosas nasales. Para ello puedes centrarte en un punto en la piel de la nariz y sentir como el aire lo roza.
+Imagina que la respiración llega hasta tu estómago e hincha tu barriga. Siente cómo se mueve el abdomen de arriba a abajo.
+Imagina que el aire es visible (puedes darle aspecto de un dragón alargado si te es útil) y visualizalo entrando y saliendo";

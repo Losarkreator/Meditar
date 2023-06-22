@@ -40,7 +40,7 @@
 "aPeacefulPlaceTitle_string" = "A peaceful place";
 "aPeacefulPlaceDescription_string" = "Find a quiet place, a room should be enough, but if possible find an isolated place, such as a deep forest or the foot of a tree, among others. If you don't have access to any quiet place you can always put on earplugs, headphones with relaxing music, or the most complicated option, learn to ignore noises.";
 
-"correctPostureTitle_string" = "the correct posture";
+"correctPostureTitle_string" = "The correct posture";
 "correctPostureDescription_string" = "The best position to meditate is in the lotus position, with each foot on top of the opposite thigh. This pose requires the body to be in good condition, if you can't hold this position, try:
 Sit upright, with your spine straight and your head supported.
 Your head should be slightly tilted down and your eyes gently closed.
@@ -49,6 +49,10 @@ If you can't sit down either An armchair can be a big help if
 Lying down should be a last resort, as it is very easy to fall asleep.";
 
 
-
 "basicMeditation_string" = "Basic meditation";
-
+"watchTheBreathTitle_string" = "Watch the breath";
+"watchTheBreathDescription_string" = "Keep your attention on your breath, observe each inhalation and exhalation. Do not close your eyes completely, they will close on their own as you go deeper into the meditation. Meanwhile, keep your eyes on a fixed point, it can be a small point in front of you or the tip of your nose.";
+"tipsTitle_string" = "Tips";
+"tipsDescription_string" = "Feel the air flow in and out of your nostrils. To do this, you can focus on a point on the skin of the nose and feel how the air touches it.
+Imagine that the breath reaches your stomach and swells your belly. Feel how the abdomen moves up and down.
+Imagine that the air is visible (you can make it look like an elongated dragon if it helps) and visualize it going in and out";

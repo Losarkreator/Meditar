@@ -1,10 +1,10 @@
-//  PreviousInstructions.swift
+//  PreviousInstructionsView.swift
 //  meditar
 //  Created by Losark on 20/6/23.
 
 import SwiftUI
 
-struct PreviousInstructions: View {
+struct PreviousInstructionsView: View {
     @State private var currentPage = 0
     
     var body: some View {
@@ -55,8 +55,8 @@ struct PreviousInstructions: View {
     }
 }
 
-struct PreviousInstructions_Previews: PreviewProvider {
+struct PreviousInstructionsView_Previews: PreviewProvider {
     static var previews: some View {
-        PreviousInstructions()
+        PreviousInstructionsView()
     }
 }

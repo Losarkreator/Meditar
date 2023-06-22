@@ -59,7 +59,7 @@ struct LevelsView: View {
                     
                     //MARK: - Instrucciones
                     ZStack {
-                        CustomNavigationButton(destination: Instructions())
+                        CustomNavigationButton(destination: InstructionsView())
                         Text(NSLocalizedString("instructions_string", comment: ""))
                             .font(.title2)
                             .fontWeight(.bold)

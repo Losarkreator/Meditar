@@ -1,10 +1,10 @@
-//  Benefits.swift
+//  BenefitsView.swift
 //  meditar
 //  Created by Losark on 20/6/23.
 
 import SwiftUI
 
-struct Benefits: View {
+struct BenefitsView: View {
     @State private var currentPage = 0
     let paddinBottom = 40.0
     
@@ -95,9 +95,9 @@ struct benefitSubview: View {
 
 
 
-struct Benefits_Previews: PreviewProvider {
+struct BenefitsView_Previews: PreviewProvider {
     static var previews: some View {
-        Benefits()
+        BenefitsView()
             .environment(\.locale, Locale.init(identifier: "es"))
     }
 }

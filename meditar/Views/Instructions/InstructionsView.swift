@@ -1,10 +1,10 @@
-//  Instructions.swift
+//  InstructionsView.swift
 //  meditar
 //  Created by Losark on 20/6/23.
 
 import SwiftUI
 
-struct Instructions: View {
+struct InstructionsView: View {
     var body: some View {
         ZStack {
             Color.amarillo
@@ -32,7 +32,7 @@ struct Instructions: View {
                 //MARK: - Instrucciones
                 VStack {
                     ZStack {
-                        CustomNavigationButton(destination: Benefits())
+                        CustomNavigationButton(destination: BenefitsView())
                         Text("benefits_string")
                             .font(.title2)
                             .fontWeight(.bold)
@@ -40,7 +40,7 @@ struct Instructions: View {
                     }
                     
                     ZStack {
-                        CustomNavigationButton(destination: PreviousInstructions())
+                        CustomNavigationButton(destination: PreviousInstructionsView())
                         Text("previousInstructions_string")
                             .font(.title2)
                             .fontWeight(.bold)
@@ -48,7 +48,7 @@ struct Instructions: View {
                     }
                     
                     ZStack {
-                        CustomNavigationButton(destination: Instructions())
+                        CustomNavigationButton(destination: InstructionsView())
                         Text("basicMeditation_string")
                             .font(.title2)
                             .fontWeight(.bold)
@@ -76,8 +76,8 @@ struct Instructions: View {
     }
 }
 
-struct Instructions_Previews: PreviewProvider {
+struct InstructionsView_Previews: PreviewProvider {
     static var previews: some View {
-        Instructions()
+        InstructionsView()
     }
 }

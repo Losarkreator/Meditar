@@ -48,7 +48,7 @@ struct InstructionsView: View {
                     }
                     
                     ZStack {
-                        CustomNavigationButton(destination: InstructionsView())
+                        CustomNavigationButton(destination: BasicMeditationView())
                         Text("basicMeditation_string")
                             .font(.title2)
                             .fontWeight(.bold)

@@ -1,8 +1,3 @@
-"hellow_string" = "Hi!";
-"introduction_string %@" = "My name is  %@.";
-"description_string" = "This is a description example.";
-
-
 "levels_string" = "Levels";
 "beginner_string" = "Beginner";
 "intermediate_string" = "Intermediate";
@@ -42,4 +37,18 @@
 
 
 "previousInstructions_string" = "Previous instructions";
+"aPeacefulPlaceTitle_string" = "A peaceful place";
+"aPeacefulPlaceDescription_string" = "Find a quiet place, a room should be enough, but if possible find an isolated place, such as a deep forest or the foot of a tree, among others. If you don't have access to any quiet place you can always put on earplugs, headphones with relaxing music, or the most complicated option, learn to ignore noises.";
+
+"correctPostureTitle_string" = "the correct posture";
+"correctPostureDescription_string" = "The best position to meditate is in the lotus position, with each foot on top of the opposite thigh. This pose requires the body to be in good condition, if you can't hold this position, try:
+Sit upright, with your spine straight and your head supported.
+Your head should be slightly tilted down and your eyes gently closed.
+Put the left hand cradling the right.
+If you can't sit down either An armchair can be a big help if
+Lying down should be a last resort, as it is very easy to fall asleep.";
+
+
+
 "basicMeditation_string" = "Basic meditation";
+

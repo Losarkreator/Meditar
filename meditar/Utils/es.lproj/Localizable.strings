@@ -1,8 +1,3 @@
-"hellow_string" = "Hola!";
-"introduction_string %@" = "Mi nombre es  %@.";
-"description_string" = "Esto es un ejemplo.";
-
-
 "levels_string" = "Niveles";
 "beginner_string" = "Principiante";
 "intermediate_string" = "Intermedio";
@@ -42,4 +37,16 @@
 
 
 "previousInstructions_string" = "Instrucciones previas";
+"aPeacefulPlaceTitle_string" = "Un lugar tranquilo";
+"aPeacefulPlaceDescription_string" = "Busca un lugar tranquilo, una habitación debería ser suficiente, pero si es posible busca un lugar aislado, como un bosque profundo o el pie de un árbol, entre otros. Si no tienes acceso a ningún lugar silencioso siempre puedes ponerte tapones para los oídos, cascos con música relajante, o la opción más complicada, aprender a ignorar los ruidos.";
+
+"correctPostureTitle_string" = "La postura correcta";
+"correctPostureDescription_string" = "La mejor posición para meditar es la del loto, con cada pie encima del muslo contrario. Esta postura exige que el cuerpo esté en buenas condiciones, si no puedes mantener esta posición, intenta:
+Sentarte erguido, con la columna recta y la cabeza apoyada.
+Tu cabeza debe estar levemente inclinada hacia abajo y tus ojos, suavemente cerrados.
+Pon la mano izquierda acunando a la derecha.
+Si tampoco puedes estar sentado Un sillón puede ser de gran ayuda si
+Tumbarse debe ser el último recurso, ya que es muy fácil quedarse dormido.";
+
+
 "basicMeditation_string" = "Meditación básica";
